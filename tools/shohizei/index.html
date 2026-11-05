@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>消費税計算｜税込・税抜を10%/8%で一発計算 - atalabo ツールズ</title>
+<meta name="description" content="税抜価格から税込価格、税込価格から税抜価格と消費税額を計算する無料ツール。標準税率10%・軽減税率8%に対応し、端数処理（切り捨て・四捨五入・切り上げ）も選べます。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/shohizei/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="消費税計算｜税込・税抜を10%/8%で一発計算 - atalabo ツールズ">
+<meta property="og:description" content="税抜価格から税込価格、税込価格から税抜価格と消費税額を計算する無料ツール。標準税率10%・軽減税率8%に対応し、端数処理（切り捨て・四捨五入・切り上げ）も選べます。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/shohizei/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "消費税計算", "url": "https://volcanotkahasi.github.io/tools/shohizei/", "description": "税抜価格から税込価格、税込価格から税抜価格と消費税額を計算する無料ツール。標準税率10%・軽減税率8%に対応し、端数処理（切り捨て・四捨五入・切り上げ）も選べます。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "軽減税率8%の対象は？", "acceptedAnswer": {"@type": "Answer", "text": "酒類・外食を除く飲食料品と、週2回以上発行される定期購読の新聞が対象です。外食やケータリング、酒類は10%です。"}}, {"@type": "Question", "name": "端数処理はどれを選べばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "法律上の決まりはなく事業者が選べますが、実務では切り捨てが最も一般的です。インボイス制度では、1枚の請求書につき税率ごとに1回の端数処理を行います。"}}, {"@type": "Question", "name": "税込から税抜に戻すと1円ずれるのはなぜ？", "acceptedAnswer": {"@type": "Answer", "text": "税額の端数処理をしているため、税抜→税込→税抜で元の金額に戻らないことがあります。このツールでは税込額に含まれる消費税（税込×10/110など）を先に求め、税込額から引いて税抜額を出しています。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "消費税計算", "item": "https://volcanotkahasi.github.io/tools/shohizei/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-calc">計算・お金</a> › 消費税計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>消費税計算（税込・税抜）</h1>
+<p class="lead">見積書・請求書・値札づくりに。10%と8%の両方を同時に確認できます。</p>
+<section class="card" aria-label="消費税計算">
+<div class="row c2"><div><label for="am">金額（円）</label><input type="number" id="am" value="1000" min="0" inputmode="numeric"></div><div><label for="dir">入力した金額は</label><select id="dir"><option value="excl">税抜（本体価格）</option><option value="incl">税込</option></select></div></div>
+<div class="row c2"><div><label for="rt">税率</label><select id="rt"><option value="10">10%（標準税率）</option><option value="8">8%（軽減税率）</option></select></div><div><label for="rd">端数処理</label><select id="rd"><option value="floor">切り捨て</option><option value="round">四捨五入</option><option value="ceil">切り上げ</option></select></div></div>
+<div class="result" id="res"></div>
+<h3>税率別の比較</h3><table><thead><tr><th>税率</th><th>税抜</th><th>消費税</th><th>税込</th></tr></thead><tbody id="cmp"></tbody></table>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>金額を入力し、その金額が「税抜」か「税込」かを選びます。</li><li>税率（10%または8%）と端数処理を選びます。</li><li>税込・税抜価格と消費税額が表示されます。下の表で10%と8%を比較できます。</li></ol></div></section>
+<h2>消費税の計算式</h2><div class="card"><p>税込価格 ＝ 税抜価格 × 1.1（軽減税率は × 1.08）<br>税抜価格 ＝ 税込価格 ÷ 1.1（軽減税率は ÷ 1.08）<br>税込価格に含まれる消費税 ＝ 税込価格 × 10 ÷ 110（軽減税率は × 8 ÷ 108）</p><p class="note">このツールは小数の誤差が出ないよう整数で計算し、消費税額に対して選んだ端数処理を行います。</p></div>
+<section class="faq"><h2>よくある質問</h2><details><summary>軽減税率8%の対象は？</summary><p>酒類・外食を除く飲食料品と、週2回以上発行される定期購読の新聞が対象です。外食やケータリング、酒類は10%です。</p></details><details><summary>端数処理はどれを選べばいいですか？</summary><p>法律上の決まりはなく事業者が選べますが、実務では切り捨てが最も一般的です。インボイス制度では、1枚の請求書につき税率ごとに1回の端数処理を行います。</p></details><details><summary>税込から税抜に戻すと1円ずれるのはなぜ？</summary><p>税額の端数処理をしているため、税抜→税込→税抜で元の金額に戻らないことがあります。このツールでは税込額に含まれる消費税（税込×10/110など）を先に求め、税込額から引いて税抜額を出しています。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../warikan/">🍻 割り勘計算</a></li><li><a href="../percent/">％ パーセント計算</a></li><li><a href="../denki/">⚡ 電気代計算</a></li><li><a href="../unit/">📏 単位変換</a></li><li><a href="../bmi/">⚖️ BMI計算</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function y(n){return n.toLocaleString('ja-JP')+'円';}
+function u(){var a=Math.floor(+$('#am').value||0),d=$('#dir').value,r=+$('#rt').value,m=$('#rd').value,f=d==='excl'?AT.taxFromExcl:AT.taxFromIncl,x=f(a,r,m);
+$('#res').innerHTML='<div class="big">'+(d==='excl'?'税込 '+y(x.incl):'税抜 '+y(x.excl))+'</div>消費税（'+r+'%）：'+y(x.tax)+'<br>税抜 '+y(x.excl)+' ＋ 消費税 '+y(x.tax)+' ＝ 税込 '+y(x.incl);
+$('#cmp').innerHTML=[10,8].map(function(t){var z=f(a,t,m);return '<tr><td>'+t+'%</td><td>'+y(z.excl)+'</td><td>'+y(z.tax)+'</td><td>'+y(z.incl)+'</td></tr>';}).join('');}
+['#am','#dir','#rt','#rd'].forEach(function(s){$(s).addEventListener('input',u);});u();
+})();
+</script>
+</body>
+</html>

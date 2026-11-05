@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>画像圧縮・リサイズ｜アップロード不要でJPEG/WebP変換 - atalabo ツールズ</title>
+<meta name="description" content="画像の縮小・圧縮・形式変換（JPEG/PNG/WebP）をブラウザ内で行う無料ツール。画像はサーバーにアップロードされないので安心。画質と最大サイズを指定してファイル容量を小さくできます。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/image-resize/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="画像圧縮・リサイズ｜アップロード不要でJPEG/WebP変換 - atalabo ツールズ">
+<meta property="og:description" content="画像の縮小・圧縮・形式変換（JPEG/PNG/WebP）をブラウザ内で行う無料ツール。画像はサーバーにアップロードされないので安心。画質と最大サイズを指定してファイル容量を小さくできます。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/image-resize/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "画像圧縮・リサイズ", "url": "https://volcanotkahasi.github.io/tools/image-resize/", "description": "画像の縮小・圧縮・形式変換（JPEG/PNG/WebP）をブラウザ内で行う無料ツール。画像はサーバーにアップロードされないので安心。画質と最大サイズを指定してファイル容量を小さくできます。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "画像はサーバーにアップロードされますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。画像の読み込み・縮小・圧縮はすべてお使いのブラウザ内（Canvas）で行われ、外部に送信されません。"}}, {"@type": "Question", "name": "位置情報などのExif情報はどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "変換後の画像には撮影日時や位置情報などのExif情報は含まれません。SNSに載せる前の位置情報削除にも使えます。"}}, {"@type": "Question", "name": "PNGで保存すると容量が増えるのはなぜ？", "acceptedAnswer": {"@type": "Answer", "text": "PNGは劣化しない形式のため、写真では容量が大きくなりがちです。写真はJPEGかWebP、ロゴやスクリーンショットはPNGがおすすめです。"}}, {"@type": "Question", "name": "透過PNGをJPEGにすると背景はどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "JPEGは透明を扱えないため、透明部分は白で塗りつぶします。透明を残したい場合はPNGかWebPを選んでください。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "画像圧縮・リサイズ", "item": "https://volcanotkahasi.github.io/tools/image-resize/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-gen">生成・画像・デザイン</a> › 画像圧縮・リサイズ</p>
+<span class="badge">無料・登録不要</span>
+<h1>画像圧縮・リサイズ</h1>
+<p class="lead">メール添付やフォーム提出で「容量が大きすぎる」ときに。画像は端末の外に出ません。</p>
+<section class="card" aria-label="画像圧縮・リサイズ">
+<label for="f">画像を選択（JPEG・PNG・WebPなど）</label><input type="file" id="f" accept="image/*">
+<div class="row c3"><div><label for="mw">最大の幅(px)</label><input type="number" id="mw" value="1600" min="1" inputmode="numeric"></div><div><label for="mh">最大の高さ(px)</label><input type="number" id="mh" value="1600" min="1" inputmode="numeric"></div><div><label for="fmt">保存形式</label><select id="fmt"><option value="image/jpeg">JPEG</option><option value="image/webp">WebP</option><option value="image/png">PNG</option></select></div></div>
+<label for="ql">画質：<span id="qv">80</span>%（JPEG/WebPのみ）</label><input type="range" id="ql" min="10" max="100" value="80" style="width:100%">
+<div class="result" id="info">画像を選ぶと、ここに変換前後のサイズが表示されます。</div>
+<div class="qr-box"><img id="pv" alt="変換後のプレビュー" hidden style="max-height:360px"></div>
+<div class="btns"><button id="dl" disabled>変換した画像を保存</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>「画像を選択」から圧縮・リサイズしたい画像を選びます。</li><li>最大の幅・高さ、保存形式、画質を指定します（縦横比は自動で保たれます）。</li><li>変換後のサイズを確認して「変換した画像を保存」を押します。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>画像はサーバーにアップロードされますか？</summary><p>いいえ。画像の読み込み・縮小・圧縮はすべてお使いのブラウザ内（Canvas）で行われ、外部に送信されません。</p></details><details><summary>位置情報などのExif情報はどうなりますか？</summary><p>変換後の画像には撮影日時や位置情報などのExif情報は含まれません。SNSに載せる前の位置情報削除にも使えます。</p></details><details><summary>PNGで保存すると容量が増えるのはなぜ？</summary><p>PNGは劣化しない形式のため、写真では容量が大きくなりがちです。写真はJPEGかWebP、ロゴやスクリーンショットはPNGがおすすめです。</p></details><details><summary>透過PNGをJPEGにすると背景はどうなりますか？</summary><p>JPEGは透明を扱えないため、透明部分は白で塗りつぶします。透明を残したい場合はPNGかWebPを選んでください。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../qrcode/">🔳 QRコード作成</a></li><li><a href="../password/">🔑 パスワード生成</a></li><li><a href="../color-code/">🎨 カラーコード変換</a></li><li><a href="../kuji/">🎲 くじ引き・チーム分け</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+var img=null,blob=null,orig=null,name='image';
+function go(){if(!img)return;var s=AT.fitSize(img.naturalWidth,img.naturalHeight,+$('#mw').value||0,+$('#mh').value||0),c=document.createElement('canvas');c.width=s[0];c.height=s[1];var x=c.getContext('2d'),f=$('#fmt').value;
+if(f==='image/jpeg'){x.fillStyle='#fff';x.fillRect(0,0,s[0],s[1]);}x.drawImage(img,0,0,s[0],s[1]);
+c.toBlob(function(b){if(!b){$('#info').textContent='この形式には対応していません。別の形式を選んでください。';return;}blob=b;var pv=$('#pv');if(pv.src)URL.revokeObjectURL(pv.src);pv.src=URL.createObjectURL(b);pv.hidden=false;
+var pc=Math.round((1-b.size/orig.size)*100);$('#info').innerHTML='元画像：'+img.naturalWidth+'×'+img.naturalHeight+'px / '+AT.fmtBytes(orig.size)+'<br><b>変換後：'+s[0]+'×'+s[1]+'px / '+AT.fmtBytes(b.size)+'</b>（'+(pc>=0?pc+'% 削減':Math.abs(pc)+'% 増加')+'）';$('#dl').disabled=false;},f,+$('#ql').value/100);}
+$('#f').onchange=function(){var file=this.files[0];if(!file)return;orig=file;name=file.name.replace(/\.[^.]+$/,'');var u=URL.createObjectURL(file),i=new Image();i.onload=function(){img=i;go();};i.onerror=function(){$('#info').textContent='この画像は読み込めませんでした（HEICはSafari以外では非対応の場合があります）。';};i.src=u;};
+['#mw','#mh','#fmt'].forEach(function(s){$(s).addEventListener('change',go);});$('#ql').addEventListener('input',function(){$('#qv').textContent=this.value;});$('#ql').addEventListener('change',go);
+$('#dl').onclick=function(){if(blob)download(blob,name+'_resized.'+({'image/jpeg':'jpg','image/webp':'webp','image/png':'png'})[$('#fmt').value]);};
+})();
+</script>
+</body>
+</html>

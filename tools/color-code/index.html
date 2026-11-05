@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>カラーコード変換｜HEX・RGB・HSLを相互変換 - atalabo ツールズ</title>
+<meta name="description" content="カラーコード（HEX）・RGB・HSLを相互に変換する無料ツール。カラーピッカーで色を選んだり、CSSの色指定をそのまま貼り付けて変換できます。白・黒とのコントラスト比も表示。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/color-code/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="カラーコード変換｜HEX・RGB・HSLを相互変換 - atalabo ツールズ">
+<meta property="og:description" content="カラーコード（HEX）・RGB・HSLを相互に変換する無料ツール。カラーピッカーで色を選んだり、CSSの色指定をそのまま貼り付けて変換できます。白・黒とのコントラスト比も表示。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/color-code/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "カラーコード変換", "url": "https://volcanotkahasi.github.io/tools/color-code/", "description": "カラーコード（HEX）・RGB・HSLを相互に変換する無料ツール。カラーピッカーで色を選んだり、CSSの色指定をそのまま貼り付けて変換できます。白・黒とのコントラスト比も表示。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "3桁のカラーコードにも対応していますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。#F80 のような3桁表記は #FF8800 として扱います。"}}, {"@type": "Question", "name": "HSLとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "色相（Hue 0〜360°）・彩度（Saturation）・明度（Lightness）で色を表す方法です。明るさだけ変えた色を作りたいときに便利です。"}}, {"@type": "Question", "name": "コントラスト比とは？", "acceptedAnswer": {"@type": "Answer", "text": "文字色と背景色の見やすさの指標で、WCAG 2.xでは通常の本文で4.5:1以上が推奨されています。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "カラーコード変換", "item": "https://volcanotkahasi.github.io/tools/color-code/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-gen">生成・画像・デザイン</a> › カラーコード変換</p>
+<span class="badge">無料・登録不要</span>
+<h1>カラーコード変換</h1>
+<p class="lead">Webデザインやスライド作りで使う色コードを、すぐに変換・コピーできます。</p>
+<section class="card" aria-label="カラーコード変換">
+<div class="row c2"><div><label for="ci">色を入力（#RRGGBB / rgb() / hsl()）</label><input type="text" id="ci" value="#0F766E" class="mono"></div><div><label for="cp">カラーピッカー</label><input type="color" id="cp" value="#0f766e"></div></div>
+<div class="swatch" id="sw"></div><p class="err" id="cerr"></p>
+<table><tbody>
+<tr><th>HEX</th><td class="mono" id="o-hex"></td><td><button class="sub" data-copy="#o-hex">コピー</button></td></tr>
+<tr><th>RGB</th><td class="mono" id="o-rgb"></td><td><button class="sub" data-copy="#o-rgb">コピー</button></td></tr>
+<tr><th>HSL</th><td class="mono" id="o-hsl"></td><td><button class="sub" data-copy="#o-hsl">コピー</button></td></tr>
+</tbody></table>
+<p class="note" id="ctr"></p>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>入力欄にカラーコード（例：#FF8800）やrgb()、hsl()を入力するか、カラーピッカーで色を選びます。</li><li>HEX・RGB・HSLの値が表示されます。</li><li>「コピー」でCSSにそのまま貼れる形式でコピーできます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>3桁のカラーコードにも対応していますか？</summary><p>はい。#F80 のような3桁表記は #FF8800 として扱います。</p></details><details><summary>HSLとは何ですか？</summary><p>色相（Hue 0〜360°）・彩度（Saturation）・明度（Lightness）で色を表す方法です。明るさだけ変えた色を作りたいときに便利です。</p></details><details><summary>コントラスト比とは？</summary><p>文字色と背景色の見やすさの指標で、WCAG 2.xでは通常の本文で4.5:1以上が推奨されています。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../qrcode/">🔳 QRコード作成</a></li><li><a href="../image-resize/">🖼️ 画像圧縮・リサイズ</a></li><li><a href="../password/">🔑 パスワード生成</a></li><li><a href="../kuji/">🎲 くじ引き・チーム分け</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function show(rgb){var hex=AT.rgbToHex(rgb[0],rgb[1],rgb[2]),h=AT.rgbToHsl(rgb[0],rgb[1],rgb[2]);$('#o-hex').textContent=hex;$('#o-rgb').textContent='rgb('+rgb.join(', ')+')';$('#o-hsl').textContent='hsl('+h[0]+', '+h[1]+'%, '+h[2]+'%)';$('#sw').style.background=hex;$('#cp').value=hex.toLowerCase();
+var w=AT.contrast(rgb,[255,255,255]),b=AT.contrast(rgb,[0,0,0]);$('#ctr').textContent='コントラスト比：白文字 '+w.toFixed(2)+':1 / 黒文字 '+b.toFixed(2)+':1（WCAGでは本文に4.5:1以上が推奨）';}
+$('#ci').addEventListener('input',function(){var c=AT.parseColor(this.value);$('#cerr').textContent=c?'':'色の形式を認識できません（例：#ff8800、rgb(255,136,0)、hsl(32,100%,50%)）';if(c)show(c);});
+$('#cp').addEventListener('input',function(){$('#ci').value=this.value.toUpperCase();show(AT.hexToRgb(this.value));});show(AT.parseColor($('#ci').value));
+})();
+</script>
+</body>
+</html>

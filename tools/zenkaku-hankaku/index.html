@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全角半角変換｜英数字・カタカナ・記号を一括変換 - atalabo ツールズ</title>
+<meta name="description" content="全角⇔半角を一括変換する無料ツール。英数字・記号・カタカナ・スペースを個別に選んで変換でき、ひらがな⇔カタカナ変換にも対応。濁点・半濁点も正しく処理します。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/zenkaku-hankaku/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="全角半角変換｜英数字・カタカナ・記号を一括変換 - atalabo ツールズ">
+<meta property="og:description" content="全角⇔半角を一括変換する無料ツール。英数字・記号・カタカナ・スペースを個別に選んで変換でき、ひらがな⇔カタカナ変換にも対応。濁点・半濁点も正しく処理します。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/zenkaku-hankaku/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "全角半角変換", "url": "https://volcanotkahasi.github.io/tools/zenkaku-hankaku/", "description": "全角⇔半角を一括変換する無料ツール。英数字・記号・カタカナ・スペースを個別に選んで変換でき、ひらがな⇔カタカナ変換にも対応。濁点・半濁点も正しく処理します。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "半角カタカナの濁点（ﾞ）はどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "「ｶﾞ」のような濁点付きの半角カタカナは、全角にすると1文字の「ガ」にまとめます。逆に全角の「ガ」は半角では「ｶﾞ」の2文字になります。"}}, {"@type": "Question", "name": "ひらがなは半角になりますか？", "acceptedAnswer": {"@type": "Answer", "text": "ひらがなには半角文字がないため、半角変換ではそのまま残ります。半角にしたい場合は先に「ひらがな → カタカナ」で変換してください。"}}, {"@type": "Question", "name": "円記号（¥）やチルダ（～）は変換されますか？", "acceptedAnswer": {"@type": "Answer", "text": "全角の英数字・記号（！〜～の範囲：U+FF01〜FF5E）と半角ASCII文字を相互に変換します。「～（波ダッシュ）」「￥」など範囲外の文字はそのまま残ります。"}}, {"@type": "Question", "name": "入力内容は送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。変換はブラウザ内だけで行われます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "全角半角変換", "item": "https://volcanotkahasi.github.io/tools/zenkaku-hankaku/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-text">文字・テキスト</a> › 全角半角変換</p>
+<span class="badge">無料・登録不要</span>
+<h1>全角半角変換</h1>
+<p class="lead">住所・電話番号・商品名などの表記ゆれを一括でそろえます。</p>
+<section class="card" aria-label="全角半角変換">
+<label for="in">変換したいテキスト</label>
+<textarea id="in" placeholder="例：ＡＢＣ１２３　ｶﾞｷﾞｸﾞ"></textarea>
+<div><label class="inline"><input type="checkbox" id="o-al" checked>英数字</label><label class="inline"><input type="checkbox" id="o-sy" checked>記号</label><label class="inline"><input type="checkbox" id="o-ka" checked>カタカナ</label><label class="inline"><input type="checkbox" id="o-sp" checked>スペース</label></div>
+<div class="btns"><button id="b-half">全角 → 半角</button><button id="b-full">半角 → 全角</button><button class="sub" id="b-kata">ひらがな → カタカナ</button><button class="sub" id="b-hira">カタカナ → ひらがな</button></div>
+<label for="out">変換結果</label>
+<textarea id="out" readonly></textarea>
+<div class="btns"><button class="sub" data-copy="#out">結果をコピー</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>変換したい文章を入力欄に貼り付けます。</li><li>変換する文字の種類（英数字・記号・カタカナ・スペース）にチェックを入れます。</li><li>「全角 → 半角」または「半角 → 全角」を押すと結果が表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>半角カタカナの濁点（ﾞ）はどうなりますか？</summary><p>「ｶﾞ」のような濁点付きの半角カタカナは、全角にすると1文字の「ガ」にまとめます。逆に全角の「ガ」は半角では「ｶﾞ」の2文字になります。</p></details><details><summary>ひらがなは半角になりますか？</summary><p>ひらがなには半角文字がないため、半角変換ではそのまま残ります。半角にしたい場合は先に「ひらがな → カタカナ」で変換してください。</p></details><details><summary>円記号（¥）やチルダ（～）は変換されますか？</summary><p>全角の英数字・記号（！〜～の範囲：U+FF01〜FF5E）と半角ASCII文字を相互に変換します。「～（波ダッシュ）」「￥」など範囲外の文字はそのまま残ります。</p></details><details><summary>入力内容は送信されますか？</summary><p>いいえ。変換はブラウザ内だけで行われます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li><li><a href="../duplicate-lines/">🧹 重複行削除</a></li><li><a href="../json-format/">🧾 JSON整形</a></li><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function o(){return{alnum:$('#o-al').checked,symbol:$('#o-sy').checked,kana:$('#o-ka').checked,space:$('#o-sp').checked};}
+var i=$('#in'),r=$('#out');
+$('#b-half').onclick=function(){r.value=AT.toHalf(i.value,o());};
+$('#b-full').onclick=function(){r.value=AT.toFull(i.value,o());};
+$('#b-kata').onclick=function(){r.value=AT.hiraToKata(i.value);};
+$('#b-hira').onclick=function(){r.value=AT.kataToHira(i.value);};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JSON整形・構文チェック｜インデント・圧縮も無料 - atalabo ツールズ</title>
+<meta name="description" content="JSONを見やすく整形（インデント）・1行に圧縮・構文チェックできる無料ツール。エラー位置（行・文字）を表示し、キーの並べ替えにも対応。データはブラウザ外に送信されません。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/json-format/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="JSON整形・構文チェック｜インデント・圧縮も無料 - atalabo ツールズ">
+<meta property="og:description" content="JSONを見やすく整形（インデント）・1行に圧縮・構文チェックできる無料ツール。エラー位置（行・文字）を表示し、キーの並べ替えにも対応。データはブラウザ外に送信されません。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/json-format/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "JSON整形", "url": "https://volcanotkahasi.github.io/tools/json-format/", "description": "JSONを見やすく整形（インデント）・1行に圧縮・構文チェックできる無料ツール。エラー位置（行・文字）を表示し、キーの並べ替えにも対応。データはブラウザ外に送信されません。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "JSONのコメントや末尾カンマは使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "標準のJSON仕様（RFC 8259）に従って判定するため、コメントや末尾のカンマはエラーになります。"}}, {"@type": "Question", "name": "機密データを貼っても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "処理はすべてブラウザ内で行い、入力内容はサーバーへ送信しません。ただし共用PCでは使用後に入力欄をクリアしてください。"}}, {"@type": "Question", "name": "大きな数値の精度は保たれますか？", "acceptedAnswer": {"@type": "Answer", "text": "JavaScriptの数値として読み込むため、約16桁を超える整数は丸められる場合があります。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "JSON整形", "item": "https://volcanotkahasi.github.io/tools/json-format/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-text">文字・テキスト</a> › JSON整形</p>
+<span class="badge">無料・登録不要</span>
+<h1>JSON整形・構文チェック</h1>
+<p class="lead">APIのレスポンスや設定ファイルのJSONを読みやすく整えます。</p>
+<section class="card" aria-label="JSON整形">
+<label for="in">JSONを入力</label>
+<textarea id="in" class="mono" placeholder='{"name":"atalabo","tools":[1,2,3]}'></textarea>
+<div class="row c2"><div><label for="ind">インデント</label><select id="ind"><option value="2">スペース2</option><option value="4">スペース4</option><option value="t">タブ</option><option value="0">圧縮（1行）</option></select></div><div><label>&nbsp;</label><label class="inline"><input type="checkbox" id="sk">キーをアルファベット順に並べ替え</label></div></div>
+<div class="btns"><button id="go">整形する</button></div>
+<p id="msg" aria-live="polite"></p>
+<label for="out">結果</label>
+<textarea id="out" class="mono" readonly></textarea>
+<div class="btns"><button class="sub" data-copy="#out">結果をコピー</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>整形したいJSONを入力欄に貼り付けます。</li><li>インデントの種類を選び、「整形する」を押します。</li><li>エラーがある場合は行・文字の位置を表示します。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>JSONのコメントや末尾カンマは使えますか？</summary><p>標準のJSON仕様（RFC 8259）に従って判定するため、コメントや末尾のカンマはエラーになります。</p></details><details><summary>機密データを貼っても大丈夫ですか？</summary><p>処理はすべてブラウザ内で行い、入力内容はサーバーへ送信しません。ただし共用PCでは使用後に入力欄をクリアしてください。</p></details><details><summary>大きな数値の精度は保たれますか？</summary><p>JavaScriptの数値として読み込むため、約16桁を超える整数は丸められる場合があります。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li><li><a href="../duplicate-lines/">🧹 重複行削除</a></li><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+$('#go').onclick=function(){var s=$('#in').value,iv=$('#ind').value,ind=iv==='t'?'t':+iv,m=$('#msg');
+if($('#sk').checked){try{s=JSON.stringify(AT.jsonSortKeys(JSON.parse(s)));}catch(e){}}
+var r=AT.jsonFormat(s,ind);if(r.ok){$('#out').value=r.out;m.className='note';m.textContent='✓ 正しいJSONです';}else{m.className='err';m.textContent='構文エラー：'+(r.where?r.where+'：':'')+r.error;}};
+})();
+</script>
+</body>
+</html>

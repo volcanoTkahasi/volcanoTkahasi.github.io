@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>和暦西暦変換｜令和・平成・昭和の早見表つき - atalabo ツールズ</title>
+<meta name="description" content="西暦⇔和暦（令和・平成・昭和・大正・明治）をすぐに変換。改元日（令和元年＝2019年5月1日など）を考慮した日付単位の変換と、干支つきの和暦西暦早見表を掲載しています。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/wareki/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="和暦西暦変換｜令和・平成・昭和の早見表つき - atalabo ツールズ">
+<meta property="og:description" content="西暦⇔和暦（令和・平成・昭和・大正・明治）をすぐに変換。改元日（令和元年＝2019年5月1日など）を考慮した日付単位の変換と、干支つきの和暦西暦早見表を掲載しています。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/wareki/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "和暦西暦変換", "url": "https://volcanotkahasi.github.io/tools/wareki/", "description": "西暦⇔和暦（令和・平成・昭和・大正・明治）をすぐに変換。改元日（令和元年＝2019年5月1日など）を考慮した日付単位の変換と、干支つきの和暦西暦早見表を掲載しています。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "令和元年は何年ですか？", "acceptedAnswer": {"@type": "Answer", "text": "令和元年は2019年です。令和は2019年5月1日に始まったため、2019年1月1日〜4月30日は平成31年、5月1日以降が令和元年です。"}}, {"@type": "Question", "name": "平成は何年までですか？", "acceptedAnswer": {"@type": "Answer", "text": "平成は平成31年（2019年）4月30日までです。平成元年は1989年1月8日からで、同年1月1日〜7日は昭和64年です。"}}, {"@type": "Question", "name": "西暦から和暦への簡単な計算方法は？", "acceptedAnswer": {"@type": "Answer", "text": "令和は「西暦−2018」、平成は「西暦−1988」、昭和は「西暦−1925」、大正は「西暦−1911」、明治は「西暦−1867」で求められます。"}}, {"@type": "Question", "name": "入力内容は送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はブラウザ内で完結します。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "和暦西暦変換", "item": "https://volcanotkahasi.github.io/tools/wareki/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-date">日付・時間</a> › 和暦西暦変換</p>
+<span class="badge">無料・登録不要</span>
+<h1>和暦西暦変換</h1>
+<p class="lead">履歴書や公的書類の記入に。改元の境目も日付単位で正確に変換します。</p>
+<section class="card" aria-label="和暦西暦変換">
+<div class="tabs"><button class="on" data-tab="y">西暦 → 和暦</button><button data-tab="w">和暦 → 西暦</button><button data-tab="d">日付で変換</button></div>
+<div data-panel="y"><label for="sy">西暦（年）</label><input type="number" id="sy" inputmode="numeric" min="1868" max="2100" placeholder="例：2008"><div class="result" id="ry">—</div></div>
+<div data-panel="w" hidden><div class="row c2"><div><label for="we">元号</label><select id="we"><option>令和</option><option>平成</option><option>昭和</option><option>大正</option><option>明治</option></select></div><div><label for="wy">年（元年は1）</label><input type="number" id="wy" inputmode="numeric" min="1" placeholder="例：20"></div></div><div class="result" id="rw">—</div></div>
+<div data-panel="d" hidden><label for="dd">日付</label><input type="date" id="dd" min="1873-01-01"><div class="result" id="rd">—</div><p class="note">明治5年12月2日（1872年）以前は旧暦のため、日付単位の変換は1873年（明治6年）1月1日以降に対応しています。</p></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>「西暦 → 和暦」タブで西暦の年を入力すると和暦と干支が表示されます。</li><li>「和暦 → 西暦」タブでは元号と年を選びます。</li><li>改元の年（2019年・1989年など）は「日付で変換」で日付単位に確認できます。</li></ol></div></section>
+<h2>元号と改元日の一覧</h2>
+<div class="card"><table><thead><tr><th>元号</th><th>開始日（元年）</th><th>終了日</th></tr></thead><tbody>
+<tr><td>令和</td><td>2019年5月1日</td><td>—</td></tr>
+<tr><td>平成</td><td>1989年1月8日</td><td>2019年4月30日（平成31年）</td></tr>
+<tr><td>昭和</td><td>1926年12月25日</td><td>1989年1月7日（昭和64年）</td></tr>
+<tr><td>大正</td><td>1912年7月30日</td><td>1926年12月24日（大正15年）</td></tr>
+<tr><td>明治</td><td>1868年（明治元年）※</td><td>1912年7月29日（明治45年）</td></tr>
+</tbody></table><p class="note">※明治への改元は1868年10月23日（旧暦明治元年9月8日）ですが、改元の詔により同年1月1日（旧暦）にさかのぼって明治元年とされています。</p></div>
+<h2>和暦西暦早見表</h2>
+<div class="card" style="overflow-x:auto"><table><thead><tr><th>西暦</th><th>和暦</th><th>干支</th></tr></thead><tbody><tr><td>2030年</td><td>令和12年</td><td>戌</td></tr><tr><td>2029年</td><td>令和11年</td><td>酉</td></tr><tr><td>2028年</td><td>令和10年</td><td>申</td></tr><tr><td>2027年</td><td>令和9年</td><td>未</td></tr><tr><td>2026年</td><td>令和8年</td><td>午</td></tr><tr><td>2025年</td><td>令和7年</td><td>巳</td></tr><tr><td>2024年</td><td>令和6年</td><td>辰</td></tr><tr><td>2023年</td><td>令和5年</td><td>卯</td></tr><tr><td>2022年</td><td>令和4年</td><td>寅</td></tr><tr><td>2021年</td><td>令和3年</td><td>丑</td></tr><tr><td>2020年</td><td>令和2年</td><td>子</td></tr><tr><td>2019年</td><td>平成31年 / 令和元年</td><td>亥</td></tr><tr><td>2018年</td><td>平成30年</td><td>戌</td></tr><tr><td>2017年</td><td>平成29年</td><td>酉</td></tr><tr><td>2016年</td><td>平成28年</td><td>申</td></tr><tr><td>2015年</td><td>平成27年</td><td>未</td></tr><tr><td>2014年</td><td>平成26年</td><td>午</td></tr><tr><td>2013年</td><td>平成25年</td><td>巳</td></tr><tr><td>2012年</td><td>平成24年</td><td>辰</td></tr><tr><td>2011年</td><td>平成23年</td><td>卯</td></tr><tr><td>2010年</td><td>平成22年</td><td>寅</td></tr><tr><td>2009年</td><td>平成21年</td><td>丑</td></tr><tr><td>2008年</td><td>平成20年</td><td>子</td></tr><tr><td>2007年</td><td>平成19年</td><td>亥</td></tr><tr><td>2006年</td><td>平成18年</td><td>戌</td></tr><tr><td>2005年</td><td>平成17年</td><td>酉</td></tr><tr><td>2004年</td><td>平成16年</td><td>申</td></tr><tr><td>2003年</td><td>平成15年</td><td>未</td></tr><tr><td>2002年</td><td>平成14年</td><td>午</td></tr><tr><td>2001年</td><td>平成13年</td><td>巳</td></tr><tr><td>2000年</td><td>平成12年</td><td>辰</td></tr><tr><td>1999年</td><td>平成11年</td><td>卯</td></tr><tr><td>1998年</td><td>平成10年</td><td>寅</td></tr><tr><td>1997年</td><td>平成9年</td><td>丑</td></tr><tr><td>1996年</td><td>平成8年</td><td>子</td></tr><tr><td>1995年</td><td>平成7年</td><td>亥</td></tr><tr><td>1994年</td><td>平成6年</td><td>戌</td></tr><tr><td>1993年</td><td>平成5年</td><td>酉</td></tr><tr><td>1992年</td><td>平成4年</td><td>申</td></tr><tr><td>1991年</td><td>平成3年</td><td>未</td></tr><tr><td>1990年</td><td>平成2年</td><td>午</td></tr><tr><td>1989年</td><td>昭和64年 / 平成元年</td><td>巳</td></tr><tr><td>1988年</td><td>昭和63年</td><td>辰</td></tr><tr><td>1987年</td><td>昭和62年</td><td>卯</td></tr><tr><td>1986年</td><td>昭和61年</td><td>寅</td></tr><tr><td>1985年</td><td>昭和60年</td><td>丑</td></tr><tr><td>1984年</td><td>昭和59年</td><td>子</td></tr><tr><td>1983年</td><td>昭和58年</td><td>亥</td></tr><tr><td>1982年</td><td>昭和57年</td><td>戌</td></tr><tr><td>1981年</td><td>昭和56年</td><td>酉</td></tr><tr><td>1980年</td><td>昭和55年</td><td>申</td></tr><tr><td>1979年</td><td>昭和54年</td><td>未</td></tr><tr><td>1978年</td><td>昭和53年</td><td>午</td></tr><tr><td>1977年</td><td>昭和52年</td><td>巳</td></tr><tr><td>1976年</td><td>昭和51年</td><td>辰</td></tr><tr><td>1975年</td><td>昭和50年</td><td>卯</td></tr><tr><td>1974年</td><td>昭和49年</td><td>寅</td></tr><tr><td>1973年</td><td>昭和48年</td><td>丑</td></tr><tr><td>1972年</td><td>昭和47年</td><td>子</td></tr><tr><td>1971年</td><td>昭和46年</td><td>亥</td></tr><tr><td>1970年</td><td>昭和45年</td><td>戌</td></tr><tr><td>1969年</td><td>昭和44年</td><td>酉</td></tr><tr><td>1968年</td><td>昭和43年</td><td>申</td></tr><tr><td>1967年</td><td>昭和42年</td><td>未</td></tr><tr><td>1966年</td><td>昭和41年</td><td>午</td></tr><tr><td>1965年</td><td>昭和40年</td><td>巳</td></tr><tr><td>1964年</td><td>昭和39年</td><td>辰</td></tr><tr><td>1963年</td><td>昭和38年</td><td>卯</td></tr><tr><td>1962年</td><td>昭和37年</td><td>寅</td></tr><tr><td>1961年</td><td>昭和36年</td><td>丑</td></tr><tr><td>1960年</td><td>昭和35年</td><td>子</td></tr><tr><td>1959年</td><td>昭和34年</td><td>亥</td></tr><tr><td>1958年</td><td>昭和33年</td><td>戌</td></tr><tr><td>1957年</td><td>昭和32年</td><td>酉</td></tr><tr><td>1956年</td><td>昭和31年</td><td>申</td></tr><tr><td>1955年</td><td>昭和30年</td><td>未</td></tr><tr><td>1954年</td><td>昭和29年</td><td>午</td></tr><tr><td>1953年</td><td>昭和28年</td><td>巳</td></tr><tr><td>1952年</td><td>昭和27年</td><td>辰</td></tr><tr><td>1951年</td><td>昭和26年</td><td>卯</td></tr><tr><td>1950年</td><td>昭和25年</td><td>寅</td></tr><tr><td>1949年</td><td>昭和24年</td><td>丑</td></tr><tr><td>1948年</td><td>昭和23年</td><td>子</td></tr><tr><td>1947年</td><td>昭和22年</td><td>亥</td></tr><tr><td>1946年</td><td>昭和21年</td><td>戌</td></tr><tr><td>1945年</td><td>昭和20年</td><td>酉</td></tr><tr><td>1944年</td><td>昭和19年</td><td>申</td></tr><tr><td>1943年</td><td>昭和18年</td><td>未</td></tr><tr><td>1942年</td><td>昭和17年</td><td>午</td></tr><tr><td>1941年</td><td>昭和16年</td><td>巳</td></tr><tr><td>1940年</td><td>昭和15年</td><td>辰</td></tr><tr><td>1939年</td><td>昭和14年</td><td>卯</td></tr><tr><td>1938年</td><td>昭和13年</td><td>寅</td></tr><tr><td>1937年</td><td>昭和12年</td><td>丑</td></tr><tr><td>1936年</td><td>昭和11年</td><td>子</td></tr><tr><td>1935年</td><td>昭和10年</td><td>亥</td></tr><tr><td>1934年</td><td>昭和9年</td><td>戌</td></tr><tr><td>1933年</td><td>昭和8年</td><td>酉</td></tr><tr><td>1932年</td><td>昭和7年</td><td>申</td></tr><tr><td>1931年</td><td>昭和6年</td><td>未</td></tr><tr><td>1930年</td><td>昭和5年</td><td>午</td></tr><tr><td>1929年</td><td>昭和4年</td><td>巳</td></tr><tr><td>1928年</td><td>昭和3年</td><td>辰</td></tr><tr><td>1927年</td><td>昭和2年</td><td>卯</td></tr><tr><td>1926年</td><td>大正15年 / 昭和元年</td><td>寅</td></tr><tr><td>1925年</td><td>大正14年</td><td>丑</td></tr><tr><td>1924年</td><td>大正13年</td><td>子</td></tr><tr><td>1923年</td><td>大正12年</td><td>亥</td></tr><tr><td>1922年</td><td>大正11年</td><td>戌</td></tr><tr><td>1921年</td><td>大正10年</td><td>酉</td></tr><tr><td>1920年</td><td>大正9年</td><td>申</td></tr><tr><td>1919年</td><td>大正8年</td><td>未</td></tr><tr><td>1918年</td><td>大正7年</td><td>午</td></tr><tr><td>1917年</td><td>大正6年</td><td>巳</td></tr><tr><td>1916年</td><td>大正5年</td><td>辰</td></tr><tr><td>1915年</td><td>大正4年</td><td>卯</td></tr><tr><td>1914年</td><td>大正3年</td><td>寅</td></tr><tr><td>1913年</td><td>大正2年</td><td>丑</td></tr><tr><td>1912年</td><td>明治45年 / 大正元年</td><td>子</td></tr><tr><td>1911年</td><td>明治44年</td><td>亥</td></tr><tr><td>1910年</td><td>明治43年</td><td>戌</td></tr><tr><td>1909年</td><td>明治42年</td><td>酉</td></tr><tr><td>1908年</td><td>明治41年</td><td>申</td></tr><tr><td>1907年</td><td>明治40年</td><td>未</td></tr><tr><td>1906年</td><td>明治39年</td><td>午</td></tr><tr><td>1905年</td><td>明治38年</td><td>巳</td></tr><tr><td>1904年</td><td>明治37年</td><td>辰</td></tr><tr><td>1903年</td><td>明治36年</td><td>卯</td></tr><tr><td>1902年</td><td>明治35年</td><td>寅</td></tr><tr><td>1901年</td><td>明治34年</td><td>丑</td></tr><tr><td>1900年</td><td>明治33年</td><td>子</td></tr></tbody></table></div>
+<section class="faq"><h2>よくある質問</h2><details><summary>令和元年は何年ですか？</summary><p>令和元年は2019年です。令和は2019年5月1日に始まったため、2019年1月1日〜4月30日は平成31年、5月1日以降が令和元年です。</p></details><details><summary>平成は何年までですか？</summary><p>平成は平成31年（2019年）4月30日までです。平成元年は1989年1月8日からで、同年1月1日〜7日は昭和64年です。</p></details><details><summary>西暦から和暦への簡単な計算方法は？</summary><p>令和は「西暦−2018」、平成は「西暦−1988」、昭和は「西暦−1925」、大正は「西暦−1911」、明治は「西暦−1867」で求められます。</p></details><details><summary>入力内容は送信されますか？</summary><p>いいえ。計算はブラウザ内で完結します。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../age/">🎂 年齢計算</a></li><li><a href="../nissu/">📅 日数計算</a></li><li><a href="../timer/">⏱️ タイマー・ストップウォッチ</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function fy(){var y=+$('#sy').value,r=$('#ry');if(!y||y<1868){r.textContent=y?'1868年（明治元年）以降を入力してください':'—';return;}var w=AT.yearToWareki(y),e=AT.eto(y);r.innerHTML='<div class="big">'+w.map(function(x){return x.label}).join(' / ')+'</div>干支：'+e.kanji+'（'+e.yomi+'）'+(w.length>1?'<br><span class="note">この年は改元があったため2つの元号があります。</span>':'');}
+function fw(){var e=$('#we').value,n=+$('#wy').value,r=$('#rw');if(!n){r.textContent='—';return;}var mx=AT.warekiMaxYear(e);if(mx&&n>mx){r.textContent=e+'は'+mx+'年までです';return;}var y=AT.warekiToYear(e,n);r.innerHTML='<div class="big">西暦'+y+'年</div>'+e+(n===1?'元':n)+'年 ＝ '+y+'年（干支：'+AT.eto(y).kanji+'）';}
+function fd(){var a=AT.parseDate($('#dd').value),r=$('#rd');if(!a){r.textContent='—';return;}if(a[0]<1873){r.textContent='1873年1月1日以降を入力してください';return;}var w=AT.dateToWareki(a[0],a[1],a[2]);r.innerHTML='<div class="big">'+w.label+'</div>'+AT.fmtDate(a);}
+['#sy'].forEach(function(s){$(s).addEventListener('input',fy)});$('#we').addEventListener('change',fw);$('#wy').addEventListener('input',fw);$('#dd').addEventListener('input',fd);
+var now=new Date();$('#sy').value=now.getFullYear();fy();
+})();
+</script>
+</body>
+</html>

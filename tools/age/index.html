@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>年齢計算｜満年齢・数え年・入学卒業年がわかる - atalabo ツールズ</title>
+<meta name="description" content="生年月日から満年齢・数え年・生まれてからの日数・次の誕生日までの日数・干支を計算。早生まれを考慮した小学校〜大学の入学・卒業年度も一覧表示する無料ツールです。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/age/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="年齢計算｜満年齢・数え年・入学卒業年がわかる - atalabo ツールズ">
+<meta property="og:description" content="生年月日から満年齢・数え年・生まれてからの日数・次の誕生日までの日数・干支を計算。早生まれを考慮した小学校〜大学の入学・卒業年度も一覧表示する無料ツールです。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/age/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "年齢計算", "url": "https://volcanotkahasi.github.io/tools/age/", "description": "生年月日から満年齢・数え年・生まれてからの日数・次の誕生日までの日数・干支を計算。早生まれを考慮した小学校〜大学の入学・卒業年度も一覧表示する無料ツールです。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "満年齢と数え年の違いは？", "acceptedAnswer": {"@type": "Answer", "text": "満年齢は生まれた時を0歳とし誕生日ごとに1歳加えます。数え年は生まれた時を1歳とし、元日ごとに1歳加えるため「その年の西暦−生まれ年＋1」になります。"}}, {"@type": "Question", "name": "2月29日生まれの年齢はいつ増えますか？", "acceptedAnswer": {"@type": "Answer", "text": "このツールでは平年は3月1日に1歳加えます。法律（年齢計算ニ関スル法律）では誕生日の前日の終了時（＝2月28日の24時）に加算されるため、日付としては同じ結果になります。"}}, {"@type": "Question", "name": "早生まれとは？", "acceptedAnswer": {"@type": "Answer", "text": "1月1日〜4月1日生まれのことです。学年は4月2日〜翌年4月1日生まれで区切られるため、4月1日生まれも前の学年になります。このツールの入学年はこのルールで計算しています。"}}, {"@type": "Question", "name": "生年月日は保存されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はブラウザ内で行われ、どこにも送信・保存されません。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "年齢計算", "item": "https://volcanotkahasi.github.io/tools/age/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-date">日付・時間</a> › 年齢計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>年齢計算</h1>
+<p class="lead">生年月日を入れるだけで、満年齢と入学・卒業年までまとめてわかります。</p>
+<section class="card" aria-label="年齢計算">
+<div class="row c2"><div><label for="b">生年月日</label><input type="date" id="b" min="1900-01-01"></div><div><label for="d">基準日（通常は今日）</label><input type="date" id="d"></div></div>
+<div id="res" class="result">生年月日を入力してください</div>
+<div id="school" hidden><h3>入学・卒業年（日本の学校）</h3><table><thead><tr><th>学校</th><th>入学</th><th>卒業</th></tr></thead><tbody id="sch"></tbody></table><p class="note">4月2日〜翌年4月1日生まれが同じ学年です。浪人・留年・飛び級などは考慮していません。</p></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>生年月日を入力します（スマホではカレンダーから選べます）。</li><li>基準日は今日が自動で入ります。過去や未来の時点の年齢を知りたい場合は変更してください。</li><li>満年齢・数え年・干支・入学卒業年が表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>満年齢と数え年の違いは？</summary><p>満年齢は生まれた時を0歳とし誕生日ごとに1歳加えます。数え年は生まれた時を1歳とし、元日ごとに1歳加えるため「その年の西暦−生まれ年＋1」になります。</p></details><details><summary>2月29日生まれの年齢はいつ増えますか？</summary><p>このツールでは平年は3月1日に1歳加えます。法律（年齢計算ニ関スル法律）では誕生日の前日の終了時（＝2月28日の24時）に加算されるため、日付としては同じ結果になります。</p></details><details><summary>早生まれとは？</summary><p>1月1日〜4月1日生まれのことです。学年は4月2日〜翌年4月1日生まれで区切られるため、4月1日生まれも前の学年になります。このツールの入学年はこのルールで計算しています。</p></details><details><summary>生年月日は保存されますか？</summary><p>いいえ。計算はブラウザ内で行われ、どこにも送信・保存されません。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../nissu/">📅 日数計算</a></li><li><a href="../timer/">⏱️ タイマー・ストップウォッチ</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function p(s){return AT.parseDate(s);}var t=new Date();$('#d').value=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);
+function wy(y){return AT.yearToWareki(y).map(function(x){return x.label}).pop()||'';}
+function u(){var b=p($('#b').value),d=p($('#d').value),r=$('#res');if(!b||!d){r.textContent='生年月日を入力してください';$('#school').hidden=true;return;}
+if(AT.daysBetween(b,d)<0){r.textContent='基準日が生年月日より前になっています';return;}
+var a=AT.age(b[0],b[1],b[2],d[0],d[1],d[2]),k=AT.kazoe(b[0],d[0]),days=AT.daysBetween(b,d),nb=AT.nextBirthday(b[1],b[2],d[0],d[1],d[2]),e=AT.eto(b[0]),w=AT.dateToWareki(b[0],b[1],b[2]);
+r.innerHTML='<div class="big">満'+a+'歳</div>数え年：'+k+'歳<br>生まれてから：'+days.toLocaleString()+'日経過<br>次の誕生日（'+(a+1)+'歳）まで：'+AT.daysBetween(d,nb)+'日（'+AT.fmtDate(nb)+'）<br>干支：'+e.kanji+'（'+e.yomi+'）年'+(w?'<br>和暦：'+w.label+'生まれ':'');
+var E=AT.schoolEntryYear(b[0],b[1],b[2]),rows=[['小学校',E,E+6],['中学校',E+6,E+9],['高校',E+9,E+12],['大学（4年制）',E+12,E+16],['短大・専門（2年制）',E+12,E+14]];
+$('#sch').innerHTML=rows.map(function(x){return '<tr><td>'+x[0]+'</td><td>'+x[1]+'年4月<br><span class="note">'+wy(x[1])+'</span></td><td>'+x[2]+'年3月<br><span class="note">'+wy(x[2])+'</span></td></tr>';}).join('');$('#school').hidden=false;}
+$('#b').addEventListener('input',u);$('#d').addEventListener('input',u);
+})();
+</script>
+</body>
+</html>

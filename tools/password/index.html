@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>パスワード生成｜安全なランダムパスワードを無料作成 - atalabo ツールズ</title>
+<meta name="description" content="暗号学的に安全な乱数（Web Crypto API）で強力なパスワードを生成する無料ツール。長さ・英大文字・小文字・数字・記号、紛らわしい文字の除外を選べます。生成結果は送信されません。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/password/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="パスワード生成｜安全なランダムパスワードを無料作成 - atalabo ツールズ">
+<meta property="og:description" content="暗号学的に安全な乱数（Web Crypto API）で強力なパスワードを生成する無料ツール。長さ・英大文字・小文字・数字・記号、紛らわしい文字の除外を選べます。生成結果は送信されません。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/password/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "パスワード生成", "url": "https://volcanotkahasi.github.io/tools/password/", "description": "暗号学的に安全な乱数（Web Crypto API）で強力なパスワードを生成する無料ツール。長さ・英大文字・小文字・数字・記号、紛らわしい文字の除外を選べます。生成結果は送信されません。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "生成したパスワードは安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "ブラウザ標準の暗号学的乱数（crypto.getRandomValues）を使い、偏りが出ないよう処理しています。生成結果は送信も保存もされません。"}}, {"@type": "Question", "name": "何文字にすればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "一般的には12文字以上、重要なアカウントでは16文字以上が目安です。サービスごとに別のパスワードを使うことも大切です。"}}, {"@type": "Question", "name": "選んだ文字の種類は必ず含まれますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。チェックした種類（大文字・小文字・数字・記号）が最低1文字ずつ含まれるように生成します。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "パスワード生成", "item": "https://volcanotkahasi.github.io/tools/password/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-gen">生成・画像・デザイン</a> › パスワード生成</p>
+<span class="badge">無料・登録不要</span>
+<h1>パスワード生成</h1>
+<p class="lead">推測されにくいパスワードを、端末内の安全な乱数でつくります。</p>
+<section class="card" aria-label="パスワード生成">
+<label for="len">長さ：<span id="lv">16</span>文字</label><input type="range" id="len" min="4" max="64" value="16" style="width:100%">
+<div><label class="inline"><input type="checkbox" id="o-u" checked>英大文字</label><label class="inline"><input type="checkbox" id="o-l" checked>英小文字</label><label class="inline"><input type="checkbox" id="o-d" checked>数字</label><label class="inline"><input type="checkbox" id="o-s">記号</label><label class="inline"><input type="checkbox" id="o-a">紛らわしい文字を除く（I l 1 O 0 o）</label></div>
+<div class="row c2"><div><label for="cnt">生成する個数</label><select id="cnt"><option>1</option><option selected>5</option><option>10</option></select></div></div>
+<div class="btns"><button id="go">生成する</button></div>
+<div id="out"></div><p class="note" id="ent"></p>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>長さと使う文字の種類を選びます（12文字以上・記号ありがおすすめです）。</li><li>「生成する」を押すとパスワードが表示されます。</li><li>使いたいパスワードの「コピー」を押し、パスワード管理アプリなどに保存してください。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>生成したパスワードは安全ですか？</summary><p>ブラウザ標準の暗号学的乱数（crypto.getRandomValues）を使い、偏りが出ないよう処理しています。生成結果は送信も保存もされません。</p></details><details><summary>何文字にすればいいですか？</summary><p>一般的には12文字以上、重要なアカウントでは16文字以上が目安です。サービスごとに別のパスワードを使うことも大切です。</p></details><details><summary>選んだ文字の種類は必ず含まれますか？</summary><p>はい。チェックした種類（大文字・小文字・数字・記号）が最低1文字ずつ含まれるように生成します。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../qrcode/">🔳 QRコード作成</a></li><li><a href="../image-resize/">🖼️ 画像圧縮・リサイズ</a></li><li><a href="../color-code/">🎨 カラーコード変換</a></li><li><a href="../kuji/">🎲 くじ引き・チーム分け</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function o(){return{upper:$('#o-u').checked,lower:$('#o-l').checked,digit:$('#o-d').checked,symbol:$('#o-s').checked,noAmbig:$('#o-a').checked};}
+function pool(op){var n=0;['lower','upper','digit','symbol'].forEach(function(k){if(op[k]){var s=AT.PW_SETS[k];if(op.noAmbig)s=s.replace(AT.PW_AMBIG,'');n+=s.length;}});return n;}
+function go(){var op=o(),len=+$('#len').value,c=+$('#cnt').value,h='';if(!pool(op)){$('#out').innerHTML='<p class="err">文字の種類を1つ以上選んでください</p>';return;}
+for(var i=0;i<c;i++){var p=AT.genPassword(len,op);h+='<div class="result mono" style="display:flex;gap:8px;align-items:center"><span style="flex:1" id="pw'+i+'">'+p.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</span><button class="sub" data-copy="#pw'+i+'">コピー</button></div>';}
+$('#out').innerHTML=h;var e=AT.pwEntropy(len,pool(op));$('#ent').textContent='強度の目安：約'+e+'ビット（'+(e>=100?'非常に強い':e>=70?'強い':e>=50?'普通':'弱い')+'）';}
+$('#len').addEventListener('input',function(){$('#lv').textContent=this.value;});$('#go').onclick=go;go();
+})();
+</script>
+</body>
+</html>

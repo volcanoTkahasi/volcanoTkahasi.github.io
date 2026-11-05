@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>タイマー・ストップウォッチ｜アラーム音・ラップ対応 - atalabo ツールズ</title>
+<meta name="description" content="ブラウザで使える無料のタイマーとストップウォッチ。1分・3分・5分などワンタップでセット、終了時にアラーム音でお知らせ。ストップウォッチはラップ計測に対応。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/timer/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="タイマー・ストップウォッチ｜アラーム音・ラップ対応 - atalabo ツールズ">
+<meta property="og:description" content="ブラウザで使える無料のタイマーとストップウォッチ。1分・3分・5分などワンタップでセット、終了時にアラーム音でお知らせ。ストップウォッチはラップ計測に対応。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/timer/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "タイマー・ストップウォッチ", "url": "https://volcanotkahasi.github.io/tools/timer/", "description": "ブラウザで使える無料のタイマーとストップウォッチ。1分・3分・5分などワンタップでセット、終了時にアラーム音でお知らせ。ストップウォッチはラップ計測に対応。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "画面を閉じたりタブを切り替えても動きますか？", "acceptedAnswer": {"@type": "Answer", "text": "タブを切り替えても終了時刻を基準に計測するため時間はずれません。ただしブラウザやタブを閉じると停止します。スマホではスリープ中に音が鳴らない場合があります。"}}, {"@type": "Question", "name": "音が鳴りません", "acceptedAnswer": {"@type": "Answer", "text": "端末がマナーモードになっていないか、音量を確認してください。ブラウザの仕様上、一度スタートボタンを押した後でないと音を鳴らせません。"}}, {"@type": "Question", "name": "記録は保存されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。ラップなどの記録はページを閉じると消え、どこにも送信されません。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "タイマー・ストップウォッチ", "item": "https://volcanotkahasi.github.io/tools/timer/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-date">日付・時間</a> › タイマー・ストップウォッチ</p>
+<span class="badge">無料・登録不要</span>
+<h1>タイマー・ストップウォッチ</h1>
+<p class="lead">勉強・料理・プレゼン練習に。インストール不要ですぐ使えます。</p>
+<section class="card" aria-label="タイマー・ストップウォッチ">
+<div class="tabs"><button class="on" data-tab="tm">タイマー</button><button data-tab="sw">ストップウォッチ</button></div>
+<div data-panel="tm"><div class="timer-display" id="tdisp" aria-live="off">03:00</div>
+<div class="row c2"><div><label for="tmin">分</label><input type="number" id="tmin" value="3" min="0" max="999" inputmode="numeric"></div><div><label for="tsec">秒</label><input type="number" id="tsec" value="0" min="0" max="59" inputmode="numeric"></div></div>
+<div class="btns"><button class="ghost" data-p="60">1分</button><button class="ghost" data-p="180">3分</button><button class="ghost" data-p="300">5分</button><button class="ghost" data-p="600">10分</button><button class="ghost" data-p="1500">25分</button></div>
+<div class="btns"><button id="tstart">スタート</button><button class="sub" id="treset">リセット</button></div><p class="note" id="tmsg"></p></div>
+<div data-panel="sw" hidden><div class="timer-display" id="sdisp">00:00.00</div>
+<div class="btns"><button id="sstart">スタート</button><button class="sub" id="slap" disabled>ラップ</button><button class="ghost" id="sreset">リセット</button></div>
+<ol id="laps" class="mono"></ol></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>タイマーは分・秒を入力するか、「3分」などのボタンでセットして「スタート」を押します。</li><li>時間になるとアラーム音（対応端末では振動も）でお知らせします。</li><li>ストップウォッチはスタート後に「ラップ」で途中経過を記録できます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>画面を閉じたりタブを切り替えても動きますか？</summary><p>タブを切り替えても終了時刻を基準に計測するため時間はずれません。ただしブラウザやタブを閉じると停止します。スマホではスリープ中に音が鳴らない場合があります。</p></details><details><summary>音が鳴りません</summary><p>端末がマナーモードになっていないか、音量を確認してください。ブラウザの仕様上、一度スタートボタンを押した後でないと音を鳴らせません。</p></details><details><summary>記録は保存されますか？</summary><p>いいえ。ラップなどの記録はページを閉じると消え、どこにも送信されません。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li><li><a href="../nissu/">📅 日数計算</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+var rem=180000,end=0,iv=0,run=false,ac;
+function beep(){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();for(var i=0;i<6;i++){var o=ac.createOscillator(),g=ac.createGain();o.frequency.value=880;o.connect(g);g.connect(ac.destination);var st=ac.currentTime+i*0.5;g.gain.setValueAtTime(0.25,st);g.gain.setValueAtTime(0,st+0.25);o.start(st);o.stop(st+0.3);}}catch(e){}if(navigator.vibrate)navigator.vibrate([300,200,300]);}
+function setT(){rem=((+$('#tmin').value||0)*60+(+$('#tsec').value||0))*1000;$('#tdisp').textContent=AT.fmtMs(rem);}
+function tick(){var l=end-Date.now();if(l<=0){l=0;clearInterval(iv);run=false;$('#tstart').textContent='スタート';$('#tmsg').textContent='時間になりました！';document.title='⏰ 時間です';beep();}$('#tdisp').textContent=AT.fmtMs(Math.ceil(l/1000)*1000);if(run)document.title=AT.fmtMs(Math.ceil(l/1000)*1000)+' - タイマー';rem=l;}
+$('#tstart').onclick=function(){if(!ac){try{ac=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}}if(run){clearInterval(iv);run=false;this.textContent='再開';return;}if(rem<=0)setT();if(rem<=0)return;end=Date.now()+rem;run=true;this.textContent='一時停止';$('#tmsg').textContent='';iv=setInterval(tick,200);};
+$('#treset').onclick=function(){clearInterval(iv);run=false;$('#tstart').textContent='スタート';$('#tmsg').textContent='';document.title=TITLE;setT();};
+$$('[data-p]').forEach(function(b){b.onclick=function(){var s=+b.getAttribute('data-p');$('#tmin').value=Math.floor(s/60);$('#tsec').value=s%60;$('#treset').onclick();};});
+$('#tmin').oninput=$('#tsec').oninput=function(){if(!run)setT();};var TITLE=document.title;
+var s0=0,acc=0,sr=false,siv=0,lastLap=0;function sNow(){return acc+(sr?performance.now()-s0:0);}
+function sDraw(){$('#sdisp').textContent=AT.fmtMs(sNow(),true);}
+$('#sstart').onclick=function(){if(sr){acc+=performance.now()-s0;sr=false;clearInterval(siv);this.textContent='再開';$('#slap').disabled=true;sDraw();}else{s0=performance.now();sr=true;siv=setInterval(sDraw,31);this.textContent='ストップ';$('#slap').disabled=false;}};
+$('#slap').onclick=function(){var n=sNow(),li=document.createElement('li');li.textContent=AT.fmtMs(n,true)+'（+'+AT.fmtMs(n-lastLap,true)+'）';lastLap=n;$('#laps').prepend(li);};
+$('#sreset').onclick=function(){sr=false;clearInterval(siv);acc=0;lastLap=0;$('#laps').innerHTML='';$('#sstart').textContent='スタート';$('#slap').disabled=true;sDraw();};
+})();
+</script>
+</body>
+</html>

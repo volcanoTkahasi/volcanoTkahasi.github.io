@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>くじ引き・抽選・チーム分け｜名前を入れてランダムに決定 - atalabo ツールズ</title>
+<meta name="description" content="名前や項目のリストからランダムに当選者を選ぶ無料の抽選ツール。複数人の抽選、順番決め（シャッフル）、チーム分けにも対応。偏りのない安全な乱数を使っています。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/kuji/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="くじ引き・抽選・チーム分け｜名前を入れてランダムに決定 - atalabo ツールズ">
+<meta property="og:description" content="名前や項目のリストからランダムに当選者を選ぶ無料の抽選ツール。複数人の抽選、順番決め（シャッフル）、チーム分けにも対応。偏りのない安全な乱数を使っています。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/kuji/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "くじ引き・チーム分け", "url": "https://volcanotkahasi.github.io/tools/kuji/", "description": "名前や項目のリストからランダムに当選者を選ぶ無料の抽選ツール。複数人の抽選、順番決め（シャッフル）、チーム分けにも対応。偏りのない安全な乱数を使っています。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "抽選は公平ですか？", "acceptedAnswer": {"@type": "Answer", "text": "ブラウザの暗号学的乱数（crypto.getRandomValues）とFisher–Yatesシャッフルを使い、どの候補も同じ確率で選ばれるようにしています。"}}, {"@type": "Question", "name": "同じ人が2回当たることはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "1回の抽選で複数人を選ぶ場合、同じ候補が重複して選ばれることはありません。"}}, {"@type": "Question", "name": "チームの人数が割り切れない場合は？", "acceptedAnswer": {"@type": "Answer", "text": "できるだけ均等になるよう、人数の差が最大1人になるように分けます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "くじ引き・チーム分け", "item": "https://volcanotkahasi.github.io/tools/kuji/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-gen">生成・画像・デザイン</a> › くじ引き・チーム分け</p>
+<span class="badge">無料・登録不要</span>
+<h1>くじ引き・抽選・チーム分け</h1>
+<p class="lead">プレゼント抽選、発表順決め、グループ分けを公平に。</p>
+<section class="card" aria-label="くじ引き・チーム分け">
+<label for="ls">候補（1行に1つ）</label><textarea id="ls" style="min-height:140px">Aさん
+Bさん
+Cさん
+Dさん
+Eさん
+Fさん</textarea>
+<div class="row c2"><div><label for="md">モード</label><select id="md"><option value="pick">当選者を選ぶ</option><option value="order">順番を決める（シャッフル）</option><option value="team">チームに分ける</option></select></div><div><label for="nn">人数 / チーム数</label><input type="number" id="nn" value="1" min="1" inputmode="numeric"></div></div>
+<div class="btns"><button id="go">抽選する</button></div><div id="out"></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>候補となる名前や項目を1行に1つずつ入力します。</li><li>「当選者を選ぶ」「順番を決める」「チームに分ける」からモードを選び、人数やチーム数を指定します。</li><li>「抽選する」を押すと結果が表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>抽選は公平ですか？</summary><p>ブラウザの暗号学的乱数（crypto.getRandomValues）とFisher–Yatesシャッフルを使い、どの候補も同じ確率で選ばれるようにしています。</p></details><details><summary>同じ人が2回当たることはありますか？</summary><p>1回の抽選で複数人を選ぶ場合、同じ候補が重複して選ばれることはありません。</p></details><details><summary>チームの人数が割り切れない場合は？</summary><p>できるだけ均等になるよう、人数の差が最大1人になるように分けます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../qrcode/">🔳 QRコード作成</a></li><li><a href="../image-resize/">🖼️ 画像圧縮・リサイズ</a></li><li><a href="../password/">🔑 パスワード生成</a></li><li><a href="../color-code/">🎨 カラーコード変換</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function e(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+$('#go').onclick=function(){var a=$('#ls').value.split('\n').map(function(x){return x.trim()}).filter(Boolean),m=$('#md').value,n=Math.max(1,parseInt($('#nn').value,10)||1),o=$('#out');
+if(!a.length){o.innerHTML='<p class="err">候補を入力してください</p>';return;}
+if(m==='pick'){var s=AT.shuffle(a).slice(0,Math.min(n,a.length));o.innerHTML='<div class="result"><div class="big">🎉 '+s.map(e).join('、')+'</div>'+a.length+'件から'+s.length+'件を選びました</div>';}
+else if(m==='order'){o.innerHTML='<div class="result"><ol>'+AT.shuffle(a).map(function(x){return '<li>'+e(x)+'</li>'}).join('')+'</ol></div>';}
+else{var t=AT.teams(a,Math.min(n,a.length));o.innerHTML=t.map(function(x,i){return '<div class="result"><b>チーム'+(i+1)+'（'+x.length+'人）</b><br>'+x.map(e).join('、')+'</div>'}).join('');}};
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BMI計算｜肥満度と標準体重をすぐに判定 - atalabo ツールズ</title>
+<meta name="description" content="身長と体重を入れるだけでBMI（体格指数）と肥満度の判定、標準体重（BMI22）を計算する無料ツール。日本肥満学会の判定基準に対応しています。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/bmi/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="BMI計算｜肥満度と標準体重をすぐに判定 - atalabo ツールズ">
+<meta property="og:description" content="身長と体重を入れるだけでBMI（体格指数）と肥満度の判定、標準体重（BMI22）を計算する無料ツール。日本肥満学会の判定基準に対応しています。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/bmi/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "BMI計算", "url": "https://volcanotkahasi.github.io/tools/bmi/", "description": "身長と体重を入れるだけでBMI（体格指数）と肥満度の判定、標準体重（BMI22）を計算する無料ツール。日本肥満学会の判定基準に対応しています。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "BMIの計算式は？", "acceptedAnswer": {"@type": "Answer", "text": "BMI＝体重(kg)÷身長(m)÷身長(m)です。身長170cm・体重60kgなら 60÷1.7÷1.7＝約20.8です。"}}, {"@type": "Question", "name": "標準体重とは？", "acceptedAnswer": {"@type": "Answer", "text": "統計的に最も病気になりにくいとされるBMI22になる体重で、身長(m)×身長(m)×22で求めます。"}}, {"@type": "Question", "name": "子どもにも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "BMIの判定基準は成人向けです。子どもの体格は成長曲線や肥満度（ローレル指数など）で評価するのが一般的です。"}}, {"@type": "Question", "name": "入力した数値は送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はブラウザ内で行われ、保存もされません。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "BMI計算", "item": "https://volcanotkahasi.github.io/tools/bmi/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-calc">計算・お金</a> › BMI計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>BMI計算（肥満度・標準体重）</h1>
+<p class="lead">健康診断の結果の確認やダイエットの目安に。</p>
+<section class="card" aria-label="BMI計算">
+<div class="row c2"><div><label for="ht">身長（cm）</label><input type="number" id="ht" value="170" inputmode="decimal"></div><div><label for="wt">体重（kg）</label><input type="number" id="wt" value="60" inputmode="decimal"></div></div>
+<div class="result" id="res"></div>
+<h3>判定基準（日本肥満学会）</h3><table><tbody><tr><td>18.5未満</td><td>低体重（やせ）</td></tr><tr><td>18.5以上25未満</td><td>普通体重</td></tr><tr><td>25以上30未満</td><td>肥満（1度）</td></tr><tr><td>30以上35未満</td><td>肥満（2度）</td></tr><tr><td>35以上40未満</td><td>肥満（3度）</td></tr><tr><td>40以上</td><td>肥満（4度）</td></tr></tbody></table>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>身長（cm）と体重（kg）を入力します。</li><li>BMIと判定、標準体重が自動で表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>BMIの計算式は？</summary><p>BMI＝体重(kg)÷身長(m)÷身長(m)です。身長170cm・体重60kgなら 60÷1.7÷1.7＝約20.8です。</p></details><details><summary>標準体重とは？</summary><p>統計的に最も病気になりにくいとされるBMI22になる体重で、身長(m)×身長(m)×22で求めます。</p></details><details><summary>子どもにも使えますか？</summary><p>BMIの判定基準は成人向けです。子どもの体格は成長曲線や肥満度（ローレル指数など）で評価するのが一般的です。</p></details><details><summary>入力した数値は送信されますか？</summary><p>いいえ。計算はブラウザ内で行われ、保存もされません。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../shohizei/">🧮 消費税計算</a></li><li><a href="../warikan/">🍻 割り勘計算</a></li><li><a href="../percent/">％ パーセント計算</a></li><li><a href="../denki/">⚡ 電気代計算</a></li><li><a href="../unit/">📏 単位変換</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function u(){var h=parseFloat($('#ht').value),w=parseFloat($('#wt').value),o=$('#res');if(!(h>0&&w>0)){o.textContent='身長と体重を入力してください';return;}var r=AT.bmi(h,w);
+o.innerHTML='<div class="big">BMI '+r.bmi.toFixed(1)+'</div>判定：'+r.cls+'<br>標準体重（BMI22）：'+r.std.toFixed(1)+'kg（現在との差 '+(w-r.std>0?'+':'')+(w-r.std).toFixed(1)+'kg）';}
+$('#ht').addEventListener('input',u);$('#wt').addEventListener('input',u);u();
+})();
+</script>
+</body>
+</html>

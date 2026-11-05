@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>割り勘計算｜端数を100円単位にまとめて幹事も楽々 - atalabo ツールズ</title>
+<meta name="description" content="合計金額と人数から1人あたりの支払額を計算する無料の割り勘ツール。10円・100円・1000円単位の端数処理、幹事が端数を負担する払い方にも対応。飲み会や旅行の精算に。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/warikan/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="割り勘計算｜端数を100円単位にまとめて幹事も楽々 - atalabo ツールズ">
+<meta property="og:description" content="合計金額と人数から1人あたりの支払額を計算する無料の割り勘ツール。10円・100円・1000円単位の端数処理、幹事が端数を負担する払い方にも対応。飲み会や旅行の精算に。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/warikan/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "割り勘計算", "url": "https://volcanotkahasi.github.io/tools/warikan/", "description": "合計金額と人数から1人あたりの支払額を計算する無料の割り勘ツール。10円・100円・1000円単位の端数処理、幹事が端数を負担する払い方にも対応。飲み会や旅行の精算に。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「全員同額」と「幹事が負担」の違いは？", "acceptedAnswer": {"@type": "Answer", "text": "「全員同額」は1人あたりの金額を切り上げて全員同じ額を集め、余りが出ます。「幹事が負担」は切り捨てた金額を他の人が払い、足りない分を幹事がまとめて払います。"}}, {"@type": "Question", "name": "人によって金額を変えたい場合は？", "acceptedAnswer": {"@type": "Answer", "text": "現在は均等割りのみに対応しています。傾斜をつける場合は、多めに払う人の分を合計から引いてから計算すると便利です。"}}, {"@type": "Question", "name": "入力内容は送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はブラウザ内で完結します。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "割り勘計算", "item": "https://volcanotkahasi.github.io/tools/warikan/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-calc">計算・お金</a> › 割り勘計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>割り勘計算</h1>
+<p class="lead">飲み会・旅行・プレゼント代の精算に。おつりの出にくい金額で計算します。</p>
+<section class="card" aria-label="割り勘計算">
+<div class="row c2"><div><label for="tt">合計金額（円）</label><input type="number" id="tt" value="15800" min="0" inputmode="numeric"></div><div><label for="pp">人数</label><input type="number" id="pp" value="4" min="1" inputmode="numeric"></div></div>
+<div class="row c2"><div><label for="un">端数をまとめる単位</label><select id="un"><option value="1">1円</option><option value="10">10円</option><option value="100" selected>100円</option><option value="500">500円</option><option value="1000">1000円</option></select></div><div><label for="md">払い方</label><select id="md"><option value="up">全員同額（切り上げ・余りは返金や次回へ）</option><option value="down">端数は幹事が負担（切り捨て）</option></select></div></div>
+<div class="result" id="res"></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>合計金額と人数を入力します。</li><li>端数をまとめる単位（100円単位など）と払い方を選びます。</li><li>1人あたりの金額と、幹事の負担額や余りが表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>「全員同額」と「幹事が負担」の違いは？</summary><p>「全員同額」は1人あたりの金額を切り上げて全員同じ額を集め、余りが出ます。「幹事が負担」は切り捨てた金額を他の人が払い、足りない分を幹事がまとめて払います。</p></details><details><summary>人によって金額を変えたい場合は？</summary><p>現在は均等割りのみに対応しています。傾斜をつける場合は、多めに払う人の分を合計から引いてから計算すると便利です。</p></details><details><summary>入力内容は送信されますか？</summary><p>いいえ。計算はブラウザ内で完結します。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../shohizei/">🧮 消費税計算</a></li><li><a href="../percent/">％ パーセント計算</a></li><li><a href="../denki/">⚡ 電気代計算</a></li><li><a href="../unit/">📏 単位変換</a></li><li><a href="../bmi/">⚖️ BMI計算</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function y(n){return n.toLocaleString('ja-JP')+'円';}
+function u(){var t=Math.floor(+$('#tt').value||0),p=Math.floor(+$('#pp').value||0),r=AT.warikan(t,p,+$('#un').value,$('#md').value),o=$('#res');if(!r){o.textContent='合計金額と人数（1人以上）を入力してください';return;}
+if($('#md').value==='up'){o.innerHTML='<div class="big">1人 '+y(r.per)+'</div>集金額：'+y(r.collected)+'（合計より'+y(r.diff)+'多い）<br><span class="note">ぴったり割ると1人 '+(t/p).toLocaleString('ja-JP',{maximumFractionDigits:2})+'円</span>';}
+else{o.innerHTML='<div class="big">1人 '+y(r.per)+'</div>幹事：'+y(r.organizer)+'（他の人より'+y(r.diff)+'多く負担）<br>'+(p-1)+'人 × '+y(r.per)+' ＋ 幹事 '+y(r.organizer)+' ＝ '+y(t);}}
+['#tt','#pp','#un','#md'].forEach(function(s){$(s).addEventListener('input',u);});u();
+})();
+</script>
+</body>
+</html>

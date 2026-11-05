@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文字列置換ツール｜一括置換・正規表現対応 - atalabo ツールズ</title>
+<meta name="description" content="テキスト内の文字列をまとめて置換・削除できる無料ツール。正規表現、大文字小文字の区別なしにも対応し、置換した件数も表示します。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/text-replace/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="文字列置換ツール｜一括置換・正規表現対応 - atalabo ツールズ">
+<meta property="og:description" content="テキスト内の文字列をまとめて置換・削除できる無料ツール。正規表現、大文字小文字の区別なしにも対応し、置換した件数も表示します。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/text-replace/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "文字列置換", "url": "https://volcanotkahasi.github.io/tools/text-replace/", "description": "テキスト内の文字列をまとめて置換・削除できる無料ツール。正規表現、大文字小文字の区別なしにも対応し、置換した件数も表示します。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "正規表現ではどんな書き方ができますか？", "acceptedAnswer": {"@type": "Answer", "text": "JavaScriptの正規表現が使えます。例えば「\\s+」で連続する空白、「^\\d+\\.」で行頭の番号などを指定できます。置換後の文字列では $1 などでグループを参照できます。"}}, {"@type": "Question", "name": "改行を置換できますか？", "acceptedAnswer": {"@type": "Answer", "text": "「正規表現を使う」にチェックして、検索に \\n と入力すると改行を指定できます。"}}, {"@type": "Question", "name": "データは送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。置換処理はすべてブラウザ内で行われます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "文字列置換", "item": "https://volcanotkahasi.github.io/tools/text-replace/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-text">文字・テキスト</a> › 文字列置換</p>
+<span class="badge">無料・登録不要</span>
+<h1>文字列置換（一括置換）</h1>
+<p class="lead">特定の語句をまとめて置き換えたり、不要な文字を一括削除できます。</p>
+<section class="card" aria-label="文字列置換">
+<label for="in">元のテキスト</label>
+<textarea id="in"></textarea>
+<div class="row c2"><div><label for="f">検索する文字列</label><input type="text" id="f" placeholder="例：です"></div><div><label for="r">置換後の文字列（空欄で削除）</label><input type="text" id="r" placeholder="例：だ"></div></div>
+<div><label class="inline"><input type="checkbox" id="o-re">正規表現を使う</label><label class="inline"><input type="checkbox" id="o-ic">大文字・小文字を区別しない</label></div>
+<div class="btns"><button id="go">置換する</button></div>
+<p id="msg" class="note" aria-live="polite"></p>
+<label for="out">置換結果</label>
+<textarea id="out" readonly></textarea>
+<div class="btns"><button class="sub" data-copy="#out">結果をコピー</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>元のテキストを貼り付けます。</li><li>検索する文字列と置換後の文字列を入力します（置換後を空にすると削除になります）。</li><li>「置換する」を押すと結果と置換件数が表示されます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>正規表現ではどんな書き方ができますか？</summary><p>JavaScriptの正規表現が使えます。例えば「\s+」で連続する空白、「^\d+\.」で行頭の番号などを指定できます。置換後の文字列では $1 などでグループを参照できます。</p></details><details><summary>改行を置換できますか？</summary><p>「正規表現を使う」にチェックして、検索に \n と入力すると改行を指定できます。</p></details><details><summary>データは送信されますか？</summary><p>いいえ。置換処理はすべてブラウザ内で行われます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../duplicate-lines/">🧹 重複行削除</a></li><li><a href="../json-format/">🧾 JSON整形</a></li><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+$('#go').onclick=function(){var x=AT.replaceText($('#in').value,$('#f').value,$('#r').value,{regex:$('#o-re').checked,ignoreCase:$('#o-ic').checked});var m=$('#msg');if(x.error){m.className='err';m.textContent=x.error;return;}m.className='note';m.textContent=x.count+' 件置換しました';$('#out').value=x.out;};
+})();
+</script>
+</body>
+</html>

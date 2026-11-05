@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>パーセント計算｜割合・何%・割引・増減率を一発計算 - atalabo ツールズ</title>
+<meta name="description" content="「AのB%はいくつ？」「AはBの何%？」「○%引きはいくら？」「増減率は？」をまとめて計算できる無料のパーセント計算ツール。セールの割引額や売上の前年比に。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/percent/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="パーセント計算｜割合・何%・割引・増減率を一発計算 - atalabo ツールズ">
+<meta property="og:description" content="「AのB%はいくつ？」「AはBの何%？」「○%引きはいくら？」「増減率は？」をまとめて計算できる無料のパーセント計算ツール。セールの割引額や売上の前年比に。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/percent/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "パーセント計算", "url": "https://volcanotkahasi.github.io/tools/percent/", "description": "「AのB%はいくつ？」「AはBの何%？」「○%引きはいくら？」「増減率は？」をまとめて計算できる無料のパーセント計算ツール。セールの割引額や売上の前年比に。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「割」と「%」の関係は？", "acceptedAnswer": {"@type": "Answer", "text": "1割＝10%です。「3割引き」は30%引きと同じで、元の価格×0.7で求められます。"}}, {"@type": "Question", "name": "増減率の計算式は？", "acceptedAnswer": {"@type": "Answer", "text": "（変化後−変化前）÷変化前×100で求めます。例えば800から1000なら＋25%です。"}}, {"@type": "Question", "name": "入力内容は送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はブラウザ内で行われます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "パーセント計算", "item": "https://volcanotkahasi.github.io/tools/percent/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-calc">計算・お金</a> › パーセント計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>パーセント計算</h1>
+<p class="lead">割合・割引・増減率の計算を4つまとめて。</p>
+<section class="card" aria-label="パーセント計算">
+<h3>① AのB%はいくつ？</h3><div class="row c2"><input type="number" id="a1" value="5000" aria-label="A"><input type="number" id="b1" value="20" aria-label="B（%）"></div><div class="result" id="r1"></div>
+<h3>② AはBの何%？</h3><div class="row c2"><input type="number" id="a2" value="30" aria-label="A"><input type="number" id="b2" value="120" aria-label="B"></div><div class="result" id="r2"></div>
+<h3>③ AのB%引きはいくら？</h3><div class="row c2"><input type="number" id="a3" value="3980" aria-label="価格"><input type="number" id="b3" value="30" aria-label="割引率（%）"></div><div class="result" id="r3"></div>
+<h3>④ AからBへの増減率は？</h3><div class="row c2"><input type="number" id="a4" value="800" aria-label="変化前"><input type="number" id="b4" value="1000" aria-label="変化後"></div><div class="result" id="r4"></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>計算したい内容の欄（①〜④）に数値を入力します。</li><li>入力と同時に結果が表示されます。</li><li>小数点以下は最大4桁まで表示します。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>「割」と「%」の関係は？</summary><p>1割＝10%です。「3割引き」は30%引きと同じで、元の価格×0.7で求められます。</p></details><details><summary>増減率の計算式は？</summary><p>（変化後−変化前）÷変化前×100で求めます。例えば800から1000なら＋25%です。</p></details><details><summary>入力内容は送信されますか？</summary><p>いいえ。計算はブラウザ内で行われます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../shohizei/">🧮 消費税計算</a></li><li><a href="../warikan/">🍻 割り勘計算</a></li><li><a href="../denki/">⚡ 電気代計算</a></li><li><a href="../unit/">📏 単位変換</a></li><li><a href="../bmi/">⚖️ BMI計算</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function f(x){return AT.fmtNum(AT.round(x,4),4);}function v(i){return parseFloat($(i).value);}
+function u(){var a,b;a=v('#a1');b=v('#b1');$('#r1').textContent=isNaN(a+b)?'—':a+' の '+b+'% は '+f(AT.pct.ofValue(a,b));
+a=v('#a2');b=v('#b2');$('#r2').textContent=isNaN(a+b)?'—':a+' は '+b+' の '+f(AT.pct.ratio(a,b))+'%';
+a=v('#a3');b=v('#b3');$('#r3').textContent=isNaN(a+b)?'—':a+' の '+b+'%引きは '+f(AT.pct.discount(a,b))+'（値引き額 '+f(AT.pct.ofValue(a,b))+'）';
+a=v('#a4');b=v('#b4');var c=AT.pct.change(a,b);$('#r4').textContent=isNaN(a+b)?'—':isNaN(c)?'変化前が0のため計算できません':a+' → '+b+' は '+(c>0?'+':'')+f(c)+'%（'+(c>=0?'増加':'減少')+'）';}
+$$('input[type=number]').forEach(function(i){i.addEventListener('input',u);});u();
+})();
+</script>
+</body>
+</html>

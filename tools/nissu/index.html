@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>日数計算｜日付の間の日数・何日後/何日前・平日数 - atalabo ツールズ</title>
+<meta name="description" content="2つの日付の間の日数（初日を含む/含まない）、平日（土日除く）の日数、○日後・○日前の日付を計算できる無料ツール。締切や記念日、契約期間の確認に。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/nissu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="日数計算｜日付の間の日数・何日後/何日前・平日数 - atalabo ツールズ">
+<meta property="og:description" content="2つの日付の間の日数（初日を含む/含まない）、平日（土日除く）の日数、○日後・○日前の日付を計算できる無料ツール。締切や記念日、契約期間の確認に。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/nissu/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "日数計算", "url": "https://volcanotkahasi.github.io/tools/nissu/", "description": "2つの日付の間の日数（初日を含む/含まない）、平日（土日除く）の日数、○日後・○日前の日付を計算できる無料ツール。締切や記念日、契約期間の確認に。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「初日を含める」とは？", "acceptedAnswer": {"@type": "Answer", "text": "例えば1日〜3日の場合、含めないと2日、含めると3日です。年齢や経過日数は含めない数え方、イベント期間や宿泊日数の確認では含める数え方がよく使われます。"}}, {"@type": "Question", "name": "平日の日数に祝日は含まれますか？", "acceptedAnswer": {"@type": "Answer", "text": "このツールは土曜・日曜のみを除いて数えます。祝日・年末年始などの休業日は別途差し引いてください。"}}, {"@type": "Question", "name": "うるう年は考慮されますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。カレンダー上の実際の日付で計算するため、2月29日も正しく数えます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "日数計算", "item": "https://volcanotkahasi.github.io/tools/nissu/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-date">日付・時間</a> › 日数計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>日数計算</h1>
+<p class="lead">期間の日数や、○日後の日付をすばやく計算します。</p>
+<section class="card" aria-label="日数計算">
+<div class="tabs"><button class="on" data-tab="a">日付の間の日数</button><button data-tab="b">○日後・○日前</button></div>
+<div data-panel="a"><div class="row c2"><div><label for="d1">開始日</label><input type="date" id="d1"></div><div><label for="d2">終了日</label><input type="date" id="d2"></div></div>
+<label class="inline"><input type="checkbox" id="inc">初日を含める（両端を数える）</label>
+<div class="result" id="ra">—</div></div>
+<div data-panel="b" hidden><div class="row c2"><div><label for="d3">基準日</label><input type="date" id="d3"></div><div><label for="n">日数（マイナスで○日前）</label><input type="number" id="n" value="100" inputmode="numeric"></div></div>
+<div class="result" id="rb">—</div></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>「日付の間の日数」タブで開始日と終了日を選びます。</li><li>初日も1日として数える場合は「初日を含める」にチェックします。</li><li>「○日後・○日前」タブでは、基準日と日数から日付を求めます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>「初日を含める」とは？</summary><p>例えば1日〜3日の場合、含めないと2日、含めると3日です。年齢や経過日数は含めない数え方、イベント期間や宿泊日数の確認では含める数え方がよく使われます。</p></details><details><summary>平日の日数に祝日は含まれますか？</summary><p>このツールは土曜・日曜のみを除いて数えます。祝日・年末年始などの休業日は別途差し引いてください。</p></details><details><summary>うるう年は考慮されますか？</summary><p>はい。カレンダー上の実際の日付で計算するため、2月29日も正しく数えます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li><li><a href="../timer/">⏱️ タイマー・ストップウォッチ</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+var t=new Date(),ts=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);$('#d1').value=ts;$('#d3').value=ts;
+function a(){var x=AT.parseDate($('#d1').value),y=AT.parseDate($('#d2').value),r=$('#ra');if(!x||!y){r.textContent='開始日と終了日を入力してください';return;}
+var n=AT.daysBetween(x,y),sg=n<0?-1:1,abs=Math.abs(n)+($('#inc').checked?1:0),wd=AT.weekdaysInclusive(x,y);if(!$('#inc').checked)wd-= (AT.weekday(sg>0?x:y)%6===0?0:1);
+r.innerHTML='<div class="big">'+abs.toLocaleString()+'日'+(n<0?'（終了日が前）':'')+'</div>約'+(abs/7).toFixed(1)+'週間 / 約'+(abs/30.4375).toFixed(1)+'か月<br>土日を除く平日：'+Math.max(0,wd)+'日<br><span class="note">'+AT.fmtDate(x)+' 〜 '+AT.fmtDate(y)+'</span>';}
+function b(){var x=AT.parseDate($('#d3').value),n=parseInt($('#n').value,10),r=$('#rb');if(!x||isNaN(n)){r.textContent='—';return;}var y=AT.addDays(x,n);r.innerHTML='<div class="big">'+AT.fmtDate(y)+'</div>'+AT.fmtDate(x)+'の'+Math.abs(n)+'日'+(n<0?'前':'後');}
+['#d1','#d2','#inc'].forEach(function(s){$(s).addEventListener('input',a)});['#d3','#n'].forEach(function(s){$(s).addEventListener('input',b)});a();b();
+})();
+</script>
+</body>
+</html>

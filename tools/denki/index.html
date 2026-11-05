@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>電気代計算｜消費電力(W)と使用時間から1時間・1か月の電気代 - atalabo ツールズ</title>
+<meta name="description" content="家電の消費電力（W）と使用時間から、1時間・1日・1か月・1年の電気代と電力量（kWh）を計算する無料ツール。目安単価31円/kWh（全国家庭電気製品公正取引協議会）を初期値に設定。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/denki/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="電気代計算｜消費電力(W)と使用時間から1時間・1か月の電気代 - atalabo ツールズ">
+<meta property="og:description" content="家電の消費電力（W）と使用時間から、1時間・1日・1か月・1年の電気代と電力量（kWh）を計算する無料ツール。目安単価31円/kWh（全国家庭電気製品公正取引協議会）を初期値に設定。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/denki/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "電気代計算", "url": "https://volcanotkahasi.github.io/tools/denki/", "description": "家電の消費電力（W）と使用時間から、1時間・1日・1か月・1年の電気代と電力量（kWh）を計算する無料ツール。目安単価31円/kWh（全国家庭電気製品公正取引協議会）を初期値に設定。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "WとkWhの違いは？", "acceptedAnswer": {"@type": "Answer", "text": "W（ワット）はその瞬間に使う電力の大きさ、kWh（キロワットアワー）は使った電力の量です。1000Wの家電を1時間使うと1kWhになります。"}}, {"@type": "Question", "name": "エアコンの電気代が表示より安いのはなぜ？", "acceptedAnswer": {"@type": "Answer", "text": "エアコンは室温が設定温度に近づくと消費電力が下がるため、定格の消費電力で計算した値より実際は安くなることが多いです。"}}, {"@type": "Question", "name": "アンペアからワットを求めるには？", "acceptedAnswer": {"@type": "Answer", "text": "家庭用コンセント（100V）の場合、W＝V×Aで、15Aなら1500Wです。ページ下の計算欄で確認できます。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "電気代計算", "item": "https://volcanotkahasi.github.io/tools/denki/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-calc">計算・お金</a> › 電気代計算</p>
+<span class="badge">無料・登録不要</span>
+<h1>電気代計算（W・kWh）</h1>
+<p class="lead">エアコン・ドライヤー・PCなど、家電の電気代の目安をすばやく計算します。</p>
+<section class="card" aria-label="電気代計算">
+<div class="row c2"><div><label for="w">消費電力（W）</label><input type="number" id="w" value="1200" min="0" inputmode="decimal"></div><div><label for="h">1日の使用時間（時間）</label><input type="number" id="h" value="1" min="0" step="0.25" inputmode="decimal"></div></div>
+<div class="row c2"><div><label for="dd">1か月の使用日数</label><input type="number" id="dd" value="30" min="0" max="31" inputmode="numeric"></div><div><label for="pr">電気料金単価（円/kWh）</label><input type="number" id="pr" value="31" min="0" step="0.01" inputmode="decimal"></div></div>
+<div class="result" id="res"></div>
+<h3>W（ワット）を電圧と電流から求める</h3><div class="row c2"><div><label for="v">電圧（V）</label><input type="number" id="v" value="100" inputmode="decimal"></div><div><label for="a">電流（A）</label><input type="number" id="a" value="15" inputmode="decimal"></div></div><div class="result" id="res2"></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>家電の消費電力（W）を入力します。本体のラベルや取扱説明書に記載されています。</li><li>1日の使用時間と1か月の使用日数を入力します。</li><li>電気料金単価は初期値31円/kWhです。契約の単価がわかれば書き換えてください。</li></ol></div></section>
+<h2>電気代の計算式</h2><div class="card"><p>電力量（kWh）＝ 消費電力（W）÷ 1000 × 使用時間（h）<br>電気代（円）＝ 電力量（kWh）× 電気料金単価（円/kWh）</p><p>例：1200Wのドライヤーを1日15分（0.25時間）使うと、1.2kW × 0.25h ＝ 0.3kWh、31円/kWhなら約9.3円/日です。</p>
+<p class="note">初期値の31円/kWh（税込）は、公益社団法人 全国家庭電気製品公正取引協議会が令和4年7月22日に改定した「新電力料金目安単価」です（<a href="https://www.eftc.or.jp/qa" rel="noopener" target="_blank">出典</a>）。実際の単価は契約している電力会社・プランにより異なり、基本料金・燃料費調整額・再エネ賦課金は含みません。検針票の単価に書き換えるとより正確になります。</p></div>
+<section class="faq"><h2>よくある質問</h2><details><summary>WとkWhの違いは？</summary><p>W（ワット）はその瞬間に使う電力の大きさ、kWh（キロワットアワー）は使った電力の量です。1000Wの家電を1時間使うと1kWhになります。</p></details><details><summary>エアコンの電気代が表示より安いのはなぜ？</summary><p>エアコンは室温が設定温度に近づくと消費電力が下がるため、定格の消費電力で計算した値より実際は安くなることが多いです。</p></details><details><summary>アンペアからワットを求めるには？</summary><p>家庭用コンセント（100V）の場合、W＝V×Aで、15Aなら1500Wです。ページ下の計算欄で確認できます。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../shohizei/">🧮 消費税計算</a></li><li><a href="../warikan/">🍻 割り勘計算</a></li><li><a href="../percent/">％ パーセント計算</a></li><li><a href="../unit/">📏 単位変換</a></li><li><a href="../bmi/">⚖️ BMI計算</a></li><li><a href="../moji-count/">🔢 文字数カウント</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+function n(i){return parseFloat($(i).value)||0;}function y(x,d){return x.toLocaleString('ja-JP',{maximumFractionDigits:d})+'円';}
+function u(){var r=AT.electricity(n('#w'),n('#h'),n('#dd'),n('#pr')),yr=AT.electricity(n('#w'),n('#h'),365,n('#pr'));
+$('#res').innerHTML='<div class="big">1か月 約'+y(Math.round(r.yenTotal),0)+'</div>1時間：'+y(AT.round(r.yenHour,1),1)+'（'+AT.fmtNum(r.kwhHour,3)+'kWh）<br>1日：'+y(AT.round(r.yenDay,1),1)+'（'+AT.fmtNum(r.kwhDay,3)+'kWh）<br>1か月：'+AT.fmtNum(r.kwhTotal,2)+'kWh<br>1年（365日）：約'+y(Math.round(yr.yenTotal),0);
+var w=AT.wattFromVA(n('#v'),n('#a'));$('#res2').textContent=n('#v')+'V × '+n('#a')+'A ＝ '+AT.fmtNum(w,2)+'W（'+AT.fmtNum(w/1000,3)+'kW）';}
+$$('input[type=number]').forEach(function(i){i.addEventListener('input',u);});u();
+})();
+</script>
+</body>
+</html>

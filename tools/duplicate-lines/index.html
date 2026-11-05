@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>重複行削除ツール｜リストの重複・空行を一括削除 - atalabo ツールズ</title>
+<meta name="description" content="リストやテキストの重複した行をワンクリックで削除する無料ツール。空行の削除、前後の空白を無視、並べ替え（ソート）にも対応。メールアドレスやキーワードリストの整理に。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/duplicate-lines/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="重複行削除ツール｜リストの重複・空行を一括削除 - atalabo ツールズ">
+<meta property="og:description" content="リストやテキストの重複した行をワンクリックで削除する無料ツール。空行の削除、前後の空白を無視、並べ替え（ソート）にも対応。メールアドレスやキーワードリストの整理に。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/duplicate-lines/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "重複行削除", "url": "https://volcanotkahasi.github.io/tools/duplicate-lines/", "description": "リストやテキストの重複した行をワンクリックで削除する無料ツール。空行の削除、前後の空白を無視、並べ替え（ソート）にも対応。メールアドレスやキーワードリストの整理に。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "どの行が残りますか？", "acceptedAnswer": {"@type": "Answer", "text": "同じ内容の行が複数あるときは、最初に出てきた行を残し、2回目以降を削除します。元の順番は保たれます（「並べ替える」を選んだ場合を除く）。"}}, {"@type": "Question", "name": "並べ替えの順番は？", "acceptedAnswer": {"@type": "Answer", "text": "日本語の辞書順（数字は数値として自然な順）で並べ替えます。"}}, {"@type": "Question", "name": "大量の行でも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "ブラウザ内で処理するため、数万行程度なら一瞬で処理できます。データは送信されません。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "重複行削除", "item": "https://volcanotkahasi.github.io/tools/duplicate-lines/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-text">文字・テキスト</a> › 重複行削除</p>
+<span class="badge">無料・登録不要</span>
+<h1>重複行削除</h1>
+<p class="lead">同じ内容の行を1つにまとめ、リストをすっきり整理します。</p>
+<section class="card" aria-label="重複行削除">
+<label for="in">テキスト（1行に1項目）</label>
+<textarea id="in" placeholder="りんご&#10;みかん&#10;りんご"></textarea>
+<div><label class="inline"><input type="checkbox" id="o-tr" checked>前後の空白を無視</label><label class="inline"><input type="checkbox" id="o-ic">大文字・小文字を区別しない</label><label class="inline"><input type="checkbox" id="o-em" checked>空行を削除</label><label class="inline"><input type="checkbox" id="o-so">並べ替える</label></div>
+<div class="btns"><button id="go">重複を削除</button></div>
+<p id="msg" class="note" aria-live="polite"></p>
+<label for="out">結果</label>
+<textarea id="out" readonly></textarea>
+<div class="btns"><button class="sub" data-copy="#out">結果をコピー</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>整理したいリストを1行に1項目ずつ貼り付けます。</li><li>必要なオプション（空白を無視・空行削除・並べ替えなど）を選びます。</li><li>「重複を削除」を押すと、最初に出てきた行だけが残ります。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>どの行が残りますか？</summary><p>同じ内容の行が複数あるときは、最初に出てきた行を残し、2回目以降を削除します。元の順番は保たれます（「並べ替える」を選んだ場合を除く）。</p></details><details><summary>並べ替えの順番は？</summary><p>日本語の辞書順（数字は数値として自然な順）で並べ替えます。</p></details><details><summary>大量の行でも使えますか？</summary><p>ブラウザ内で処理するため、数万行程度なら一瞬で処理できます。データは送信されません。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../moji-count/">🔢 文字数カウント</a></li><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li><li><a href="../json-format/">🧾 JSON整形</a></li><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+$('#go').onclick=function(){var x=AT.dedupeLines($('#in').value,{trim:$('#o-tr').checked,ignoreCase:$('#o-ic').checked,removeEmpty:$('#o-em').checked,sort:$('#o-so').checked});$('#out').value=x.out;$('#msg').textContent=x.kept+' 行を残し、'+x.removed+' 行を削除しました';};
+})();
+</script>
+</body>
+</html>

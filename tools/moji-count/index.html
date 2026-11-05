@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文字数カウント｜空白・改行除く/原稿用紙換算も無料 - atalabo ツールズ</title>
+<meta name="description" content="文章を貼り付けるだけで文字数をリアルタイムにカウント。空白・改行を除いた文字数、行数、バイト数（UTF-8/Shift_JIS）、原稿用紙換算枚数もすぐわかる無料ツールです。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/tools/moji-count/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo ツールズ">
+<meta property="og:title" content="文字数カウント｜空白・改行除く/原稿用紙換算も無料 - atalabo ツールズ">
+<meta property="og:description" content="文章を貼り付けるだけで文字数をリアルタイムにカウント。空白・改行を除いた文字数、行数、バイト数（UTF-8/Shift_JIS）、原稿用紙換算枚数もすぐわかる無料ツールです。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/tools/moji-count/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z' fill='%23fff'/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "文字数カウント", "url": "https://volcanotkahasi.github.io/tools/moji-count/", "description": "文章を貼り付けるだけで文字数をリアルタイムにカウント。空白・改行を除いた文字数、行数、バイト数（UTF-8/Shift_JIS）、原稿用紙換算枚数もすぐわかる無料ツールです。", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": "ja", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "空白や改行は文字数に含まれますか？", "acceptedAnswer": {"@type": "Answer", "text": "「文字数（すべて）」は空白・改行を含みます。改行だけを除いた数、空白（全角・半角スペース、タブ）と改行を除いた数も別に表示しています。"}}, {"@type": "Question", "name": "絵文字は何文字と数えますか？", "acceptedAnswer": {"@type": "Answer", "text": "見た目の1文字（Unicodeのコードポイント単位）で数えます。肌の色などを組み合わせた一部の絵文字は2文字以上になることがあります。"}}, {"@type": "Question", "name": "原稿用紙換算はどう計算していますか？", "acceptedAnswer": {"@type": "Answer", "text": "20字×20行（400字詰め）として、改行ごとに行を改め、各段落を20字で折り返した行数を20で割って切り上げています。句読点のぶら下げや禁則処理は考慮しない目安です。"}}, {"@type": "Question", "name": "入力した文章は保存・送信されますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。カウントはすべてお使いのブラウザ内で行われ、文章がサーバーに送信されることはありません。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "atalabo ツールズ", "item": "https://volcanotkahasi.github.io/tools/"}, {"@type": "ListItem", "position": 2, "name": "文字数カウント", "item": "https://volcanotkahasi.github.io/tools/moji-count/"}]}</script>
+<!-- AdSense: 審査申請時に、AdSense管理画面の自動広告/サイト確認コードをここ（</head>直前）に貼り付けます
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+</head>
+<body>
+<header class="site"><div class="wrap"><a class="logo" href="../"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0f766e"/><path d="M18 44l10-24h8l10 24h-7l-2-5H27l-2 5zm11-11h6l-3-8z" fill="#fff"/></svg><span>atalabo ツールズ</span></a><nav><a href="../#all">ツール一覧</a></nav></div></header>
+<main class="wrap">
+<p class="crumb"><a href="../">atalabo ツールズ</a> › <a href="../#cat-text">文字・テキスト</a> › 文字数カウント</p>
+<span class="badge">無料・登録不要</span>
+<h1>文字数カウント</h1>
+<p class="lead">レポート・ES・ブログ・SNS投稿の文字数をその場で数えます。入力内容は送信されません。</p>
+<section class="card" aria-label="文字数カウント">
+<label for="t">テキストを入力・貼り付け</label>
+<textarea id="t" placeholder="ここに文章を入力してください"></textarea>
+<div class="stats">
+<div class="stat"><b id="c-all">0</b><span>文字数（すべて）</span></div>
+<div class="stat"><b id="c-nonl">0</b><span>改行を除く</span></div>
+<div class="stat"><b id="c-nows">0</b><span>空白・改行を除く</span></div>
+<div class="stat"><b id="c-lines">0</b><span>行数</span></div>
+<div class="stat"><b id="c-para">0</b><span>段落数</span></div>
+<div class="stat"><b id="c-utf8">0</b><span>バイト（UTF-8）</span></div>
+<div class="stat"><b id="c-sjis">0</b><span>バイト（Shift_JIS目安）</span></div>
+<div class="stat"><b id="c-genko">0</b><span>原稿用紙（枚）</span></div>
+</div>
+<div class="btns"><button class="sub" data-copy="#t">テキストをコピー</button><button class="ghost" id="clr">クリア</button></div>
+</section>
+<div class="privacy"><span aria-hidden="true">🔒</span><span>このツールの処理はすべてお使いのブラウザ内で行われます。入力した内容やファイルがサーバーに送信・保存されることはありません。</span></div>
+<div class="ad-slot" data-ad-slot="tool-below">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+<section class="howto"><h2>使い方</h2><div class="card"><ol><li>上の入力欄に文章を入力するか、コピーした文章を貼り付けます。</li><li>文字数・空白を除く文字数・行数などが入力と同時に更新されます。</li><li>「テキストをコピー」で入力内容をそのままコピーできます。</li></ol></div></section>
+
+<section class="faq"><h2>よくある質問</h2><details><summary>空白や改行は文字数に含まれますか？</summary><p>「文字数（すべて）」は空白・改行を含みます。改行だけを除いた数、空白（全角・半角スペース、タブ）と改行を除いた数も別に表示しています。</p></details><details><summary>絵文字は何文字と数えますか？</summary><p>見た目の1文字（Unicodeのコードポイント単位）で数えます。肌の色などを組み合わせた一部の絵文字は2文字以上になることがあります。</p></details><details><summary>原稿用紙換算はどう計算していますか？</summary><p>20字×20行（400字詰め）として、改行ごとに行を改め、各段落を20字で折り返した行数を20で割って切り上げています。句読点のぶら下げや禁則処理は考慮しない目安です。</p></details><details><summary>入力した文章は保存・送信されますか？</summary><p>いいえ。カウントはすべてお使いのブラウザ内で行われ、文章がサーバーに送信されることはありません。</p></details></section>
+<section class="related"><h2>ほかのツール</h2><ul><li><a href="../zenkaku-hankaku/">🔤 全角半角変換</a></li><li><a href="../text-replace/">🔁 文字列置換</a></li><li><a href="../duplicate-lines/">🧹 重複行削除</a></li><li><a href="../json-format/">🧾 JSON整形</a></li><li><a href="../wareki/">🎌 和暦西暦変換</a></li><li><a href="../age/">🎂 年齢計算</a></li></ul></section>
+<div class="ad-slot" data-ad-slot="page-bottom">
+<!-- AdSense: 審査通過後、ここに広告ユニットのコードを貼り付けます（例）
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<p><a href="../">ツール一覧</a><a href="../privacy/">プライバシーポリシー</a><a href="../contact/">お問い合わせ</a></p>
+<p>すべてのツールはブラウザ内で動作し、入力内容をサーバーに送信しません。</p>
+<p>© 2026 atalabo ツールズ ・ made by <a href="../../">atalabo</a></p>
+</div></footer>
+
+<script src="../assets/lib.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function(){
+var t=$('#t');function u(){var r=AT.countText(t.value);$('#c-all').textContent=r.chars;$('#c-nonl').textContent=r.noNewline;$('#c-nows').textContent=r.noSpace;$('#c-lines').textContent=r.lines;$('#c-para').textContent=r.paragraphs;$('#c-utf8').textContent=r.utf8Bytes;$('#c-sjis').textContent=r.sjisBytes;$('#c-genko').textContent=r.genkoPages;}
+t.addEventListener('input',u);$('#clr').onclick=function(){t.value='';u();t.focus();};u();
+})();
+</script>
+</body>
+</html>

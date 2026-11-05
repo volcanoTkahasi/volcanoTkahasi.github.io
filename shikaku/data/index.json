@@ -1,0 +1,29 @@
+{
+ "version": "1.0.0",
+ "exams": [
+  {
+   "id": "denko2",
+   "name": "第二種電気工事士 学科",
+   "short": "電工二種",
+   "description": "一般用電気工作物等の電気工事に必要な知識（学科試験）",
+   "file": "data/denko2.json",
+   "count": 80
+  },
+  {
+   "id": "otsu4",
+   "name": "危険物取扱者 乙種第4類",
+   "short": "乙4",
+   "description": "引火性液体（ガソリン・灯油・軽油・アルコール類など）の取扱い",
+   "file": "data/otsu4.json",
+   "count": 72
+  },
+  {
+   "id": "tsushin2",
+   "name": "2級電気通信工事施工管理 第一次検定",
+   "short": "2級電通施工",
+   "description": "電気通信工学・電気通信設備・施工管理法・法規",
+   "file": "data/tsushin2.json",
+   "count": 78
+  }
+ ]
+}
