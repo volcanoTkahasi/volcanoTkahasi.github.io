@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f1a">
+<title>HAYAOSHI LIVE — オンライン早押しクイズ大会システム | atalabo</title>
+<meta name="description" content="登録不要・無料のオンライン早押しクイズ大会システム。司会がルームを作り、参加者はスマホでコードを入れるだけ。問題文のストリーミング表示、遅延補正つき早押し判定、7○3×・10up-downなどのルール、配信用スコアボードに対応。">
+<link rel="canonical" href="https://volcanotkahasi.github.io/hayaoshi/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="atalabo">
+<meta property="og:title" content="HAYAOSHI LIVE — スマホが早押しボタンになる、オンラインクイズ大会">
+<meta property="og:description" content="ルームを作ってQRを見せるだけ。遅延補正つき早押し判定、7○3×・10up-down対応、配信用スコアボードつき。無料・登録不要。">
+<meta property="og:url" content="https://volcanotkahasi.github.io/hayaoshi/">
+<meta property="og:image" content="https://volcanotkahasi.github.io/hayaoshi/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HAYAOSHI LIVE — オンライン早押しクイズ大会">
+<meta name="twitter:description" content="スマホが早押しボタンになる。無料・登録不要のクイズ大会システム。">
+<meta name="twitter:image" content="https://volcanotkahasi.github.io/hayaoshi/og.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HAYAOSHI">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f1a'/%3E%3Cellipse cx='32' cy='46' rx='22' ry='8' fill='%23262f4a'/%3E%3Cpath d='M14 40a18 14 0 0 1 36 0z' fill='%23ffb020'/%3E%3Cpath d='M26 14h12l-3 12h-6z' fill='%234dd4ff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へスキップ</a>
+<div id="netbar" class="netbar" role="status" aria-live="polite" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<main id="main">
+
+<!-- ============ LANDING ============ -->
+<section id="scr-landing" class="screen" hidden>
+  <header class="hero">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 64 64" width="56" height="56"><ellipse cx="32" cy="46" rx="22" ry="8" fill="#262f4a"/><path d="M14 40a18 14 0 0 1 36 0z" fill="#ffb020"/><path d="M26 14h12l-3 12h-6z" fill="#4dd4ff"/></svg>
+    </div>
+    <h1>HAYAOSHI <span class="accent">LIVE</span></h1>
+    <p class="lead">スマホが早押しボタンになる、<br class="sp">オンライン早押しクイズ大会システム</p>
+  </header>
+
+  <div class="cards">
+    <form class="card" id="form-join" autocomplete="off">
+      <h2><span class="ico" aria-hidden="true">🙋</span>参加する</h2>
+      <label class="field"><span>ルームコード</span>
+        <input id="join-code" name="code" inputmode="latin" autocapitalize="characters" maxlength="6" placeholder="例: K7Q2XM" required pattern="[A-Za-z0-9]{6}" aria-describedby="join-code-help">
+      </label>
+      <small id="join-code-help" class="muted">司会から教えてもらった6文字のコード</small>
+      <label class="field"><span>ニックネーム</span>
+        <input id="join-name" name="name" maxlength="16" placeholder="例: クイズ太郎" required>
+      </label>
+      <button class="btn btn-accent btn-lg" type="submit">参加する</button>
+    </form>
+
+    <div class="card">
+      <h2><span class="ico" aria-hidden="true">🎤</span>大会を開く（司会）</h2>
+      <p class="muted">ルームを作るとコードとQRコードが表示されます。参加者はスマホで読み取るだけ。</p>
+      <button class="btn btn-primary btn-lg" id="btn-create" type="button">ルームを作る</button>
+      <button class="btn btn-ghost" id="btn-resume" type="button" hidden>前回の大会を再開</button>
+    </div>
+
+    <form class="card" id="form-view" autocomplete="off">
+      <h2><span class="ico" aria-hidden="true">📺</span>配信用表示</h2>
+      <p class="muted">OBSのブラウザソースや会場スクリーン向けの大きなスコアボード。</p>
+      <label class="field"><span>ルームコード</span>
+        <input id="view-code" maxlength="6" autocapitalize="characters" placeholder="例: K7Q2XM" required pattern="[A-Za-z0-9]{6}">
+      </label>
+      <label class="check"><input type="checkbox" id="view-transparent"> 背景を透過する（OBS用）</label>
+      <button class="btn btn-ghost" type="submit">表示する</button>
+    </form>
+  </div>
+
+  <section class="howto" aria-labelledby="howto-h">
+    <h2 id="howto-h">使い方</h2>
+    <ol class="steps">
+      <li><b>司会</b>が「ルームを作る」を押す。6文字のコードとQRコードが出ます。</li>
+      <li><b>参加者</b>はQRを読み取るか、コードを入れてニックネームで参加（最大20人目安）。</li>
+      <li>司会は「問題」タブで問題を用意。<code>問題,答え</code> 形式のCSVを貼り付けるか、1問ずつ追加。サンプル20問も入っています。</li>
+      <li>「ルール」で 1○1×・7○3×・10up-down・フリー から選択（点数・休み・失格も調整可）。</li>
+      <li>「読み上げ開始」で問題文が1文字ずつ参加者の画面に流れます。誰かが押した瞬間に止まり、遅延補正した最速の人に解答権。</li>
+      <li>司会が ○ / × で判定。誤答なら「続きを読む」で他の人も押せます。間違えたら「元に戻す」。</li>
+      <li>終わったら結果をCSVで書き出し。配信では <code>?view=コード</code> の画面をOBSに重ねられます。</li>
+    </ol>
+    <details class="faq">
+      <summary>うまくつながらないときは？</summary>
+      <p>通信は端末どうしの直接接続（WebRTC / PeerJS）です。学校や会社のWi-Fiで制限されている場合は、モバイル回線に切り替えると改善することがあります。司会の画面は大会中は閉じず、前面に表示したままにしてください。通信が切れても自動で再接続し、得点は司会側に保存されています。</p>
+    </details>
+    <details class="faq">
+      <summary>キーボードショートカット（司会）</summary>
+      <p><kbd>Space</kbd> 読み上げ開始／一時停止・<kbd>O</kbd> 正解・<kbd>X</kbd> 誤答・<kbd>C</kbd> 続きを読む・<kbd>R</kbd> 正解発表・<kbd>N</kbd> 次の問題・<kbd>Ctrl</kbd>+<kbd>Z</kbd> 元に戻す</p>
+    </details>
+  </section>
+</section>
+
+<!-- ============ HOST ============ -->
+<section id="scr-host" class="screen host" hidden>
+  <header class="host-top">
+    <div class="brand">HAYAOSHI <span class="accent">LIVE</span> <span class="tag">司会</span></div>
+    <div class="room-box">
+      <button class="qr-mini" id="host-qr-mini" type="button" aria-label="QRコードを大きく表示"></button>
+      <div>
+        <div class="room-label">ルームコード</div>
+        <div class="room-code" id="host-code">------</div>
+      </div>
+      <div class="room-actions">
+        <button class="btn btn-sm btn-ghost" id="host-copy" type="button">参加URLをコピー</button>
+        <button class="btn btn-sm btn-ghost" id="host-copy-view" type="button">配信用URL</button>
+      </div>
+    </div>
+    <div class="host-status"><span class="dot" id="host-dot"></span><span id="host-online">接続待ち</span></div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="司会メニュー">
+    <button role="tab" class="tab" data-tab="play" aria-selected="true">進行</button>
+    <button role="tab" class="tab" data-tab="questions" aria-selected="false">問題 <span class="pill" id="q-count">0</span></button>
+    <button role="tab" class="tab" data-tab="rules" aria-selected="false">ルール</button>
+    <button role="tab" class="tab" data-tab="players" aria-selected="false">参加者 <span class="pill" id="p-count">0</span></button>
+    <button role="tab" class="tab" data-tab="results" aria-selected="false">結果</button>
+  </nav>
+
+  <div class="tabpanels">
+    <!-- PLAY -->
+    <div class="tabpanel" data-panel="play">
+      <div class="play-grid">
+        <div class="stage card">
+          <div class="stage-head">
+            <span class="qno" id="h-qno">問題 —</span>
+            <span class="phase" id="h-phase">待機中</span>
+            <span class="rule-chip" id="h-rule"></span>
+          </div>
+          <div class="qtext host-q" id="h-qtext" aria-live="off"><span class="muted">「次の問題」を押して出題を始めましょう。</span></div>
+          <div class="answer-line"><span class="muted">答え：</span><b id="h-answer">—</b></div>
+          <div class="buzz-banner" id="h-buzz" hidden></div>
+          <ol class="buzz-list" id="h-buzzlist"></ol>
+
+          <div class="controls" id="h-controls">
+            <button class="btn btn-primary" id="c-start" type="button">▶ 読み上げ開始 <kbd>Space</kbd></button>
+            <button class="btn btn-ghost" id="c-pause" type="button">⏸ 一時停止</button>
+            <button class="btn btn-ok btn-judge" id="c-ok" type="button" aria-label="正解">○ <kbd>O</kbd></button>
+            <button class="btn btn-ng btn-judge" id="c-ng" type="button" aria-label="誤答">× <kbd>X</kbd></button>
+            <button class="btn btn-primary" id="c-continue" type="button">続きを読む <kbd>C</kbd></button>
+            <button class="btn btn-ghost" id="c-reveal" type="button">正解発表／スルー <kbd>R</kbd></button>
+            <button class="btn btn-accent" id="c-next" type="button">次の問題 ▶ <kbd>N</kbd></button>
+            <button class="btn btn-ghost" id="c-undo" type="button">↶ 元に戻す</button>
+          </div>
+          <div class="speed-row">
+            <label for="c-speed">読み上げ速度 <b id="c-speed-val">8</b> 文字/秒</label>
+            <input type="range" id="c-speed" min="2" max="25" step="1" value="8">
+            <label class="check"><input type="checkbox" id="c-autostart"> 次の問題で自動的に読み上げ</label>
+          </div>
+        </div>
+        <aside class="card side">
+          <h3>スコアボード</h3>
+          <ol class="board" id="h-board"></ol>
+          <p class="muted small" id="h-board-empty">参加者を待っています。QRコードを見せて参加してもらいましょう。</p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div class="tabpanel" data-panel="questions" hidden>
+      <div class="two-col">
+        <div class="card">
+          <h3>CSVを貼り付けて読み込み</h3>
+          <p class="muted small">1行に1問、<code>問題,答え</code> の形式。スプレッドシートからのコピー（タブ区切り）や <code>"</code> で囲んだ値にも対応。1行目が見出しなら自動で飛ばします。</p>
+          <textarea id="csv-input" rows="8" placeholder="日本で一番高い山は何でしょう？,富士山&#10;元素記号Feで表される元素は何でしょう？,鉄"></textarea>
+          <div class="row">
+            <button class="btn btn-primary" id="csv-add" type="button">末尾に追加</button>
+            <button class="btn btn-ghost" id="csv-replace" type="button">置き換えて読み込み</button>
+            <label class="btn btn-ghost file-btn">CSVファイル<input type="file" id="csv-file" accept=".csv,.tsv,.txt,text/csv,text/plain"></label>
+          </div>
+          <h3>1問ずつ追加</h3>
+          <form id="q-form" class="q-form">
+            <label class="field"><span>問題文</span><textarea id="q-text" rows="3" required maxlength="400"></textarea></label>
+            <label class="field"><span>答え</span><input id="q-ans" required maxlength="120"></label>
+            <button class="btn btn-primary" type="submit">追加</button>
+          </form>
+          <div class="row">
+            <button class="btn btn-ghost" id="q-sample" type="button">サンプル20問を読み込む</button>
+            <button class="btn btn-ghost" id="q-shuffle" type="button">シャッフル</button>
+            <button class="btn btn-ghost danger" id="q-clear" type="button">全部削除</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3>問題リスト</h3>
+          <ol class="qlist" id="q-list"></ol>
+          <p class="muted small" id="q-empty">まだ問題がありません。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RULES -->
+    <div class="tabpanel" data-panel="rules" hidden>
+      <div class="card narrow">
+        <h3>ルールプリセット</h3>
+        <div class="preset-grid" id="preset-grid" role="radiogroup" aria-label="ルールプリセット"></div>
+        <h3>詳細設定</h3>
+        <div class="form-grid">
+          <label class="field"><span>正解の得点</span><input type="number" id="r-correct" min="0" max="1000" step="1"></label>
+          <label class="field"><span>誤答の減点</span><input type="number" id="r-wrong" min="0" max="1000" step="1"></label>
+          <label class="check wide"><input type="checkbox" id="r-reset"> 誤答で得点を0に戻す（up-down）</label>
+          <label class="field"><span>勝ち抜け得点（0=なし）</span><input type="number" id="r-win" min="0" max="1000" step="1"></label>
+          <label class="field"><span>失格になる誤答数（0=なし）</span><input type="number" id="r-lose" min="0" max="99" step="1"></label>
+          <label class="field"><span>誤答後の休み（問）</span><input type="number" id="r-rest" min="0" max="10" step="1"></label>
+          <label class="field"><span>遅延補正の待ち時間（ms）</span><input type="number" id="r-window" min="0" max="1000" step="10"></label>
+          <label class="field"><span>読み終わり後の制限時間（秒・0=なし）</span><input type="number" id="r-timeup" min="0" max="60" step="1"></label>
+          <label class="check wide"><input type="checkbox" id="r-late"> 大会の途中参加を許可する</label>
+        </div>
+        <p class="muted small">遅延補正：最初の押下が届いてから上記の時間だけ待ち、各端末の時計ずれ（ping で測定）を補正した押下時刻が最も早い人に解答権を与えます。通信が遅い会場では 300〜400ms がおすすめ。</p>
+        <p class="muted small" id="r-summary"></p>
+      </div>
+    </div>
+
+    <!-- PLAYERS -->
+    <div class="tabpanel" data-panel="players" hidden>
+      <div class="card">
+        <h3>参加者 <small class="muted" id="pl-summary"></small></h3>
+        <div class="table-wrap">
+          <table class="ptable">
+            <thead><tr><th>接続</th><th>名前</th><th>得点</th><th>○</th><th>×</th><th>状態</th><th>ping</th><th>操作</th></tr></thead>
+            <tbody id="pl-body"></tbody>
+          </table>
+        </div>
+        <p class="muted small" id="pl-empty">まだ参加者がいません。</p>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="tabpanel" data-panel="results" hidden>
+      <div class="card narrow">
+        <h3>結果</h3>
+        <ol class="board final" id="res-board"></ol>
+        <div class="row">
+          <button class="btn btn-primary" id="res-export" type="button">結果をCSVで書き出し</button>
+          <button class="btn btn-ghost" id="res-finish" type="button">大会を終了して順位を確定</button>
+          <button class="btn btn-ghost" id="res-reset" type="button">得点をリセット（新しい試合）</button>
+          <button class="btn btn-ghost danger" id="res-close" type="button">ルームを閉じる</button>
+        </div>
+        <h3>判定ログ</h3>
+        <div class="table-wrap"><table class="ptable"><thead><tr><th>#</th><th>問題</th><th>解答者</th><th>判定</th><th>押下</th></tr></thead><tbody id="res-log"></tbody></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAYER ============ -->
+<section id="scr-player" class="screen player" hidden>
+  <header class="p-top">
+    <div class="p-me">
+      <span class="dot" id="p-dot" aria-hidden="true"></span>
+      <b id="p-name">—</b>
+    </div>
+    <div class="p-score"><span id="p-score">0</span><small>点</small> <span class="ox" id="p-ox">0○0×</span></div>
+    <span class="chip" id="p-chip">接続中…</span>
+  </header>
+  <div class="p-q">
+    <div class="p-qhead"><span id="p-qno">問題 —</span><span id="p-timer" class="timer" hidden></span></div>
+    <div class="qtext" id="p-qtext" aria-live="polite"></div>
+    <div class="p-answer" id="p-answer" hidden></div>
+  </div>
+  <button class="buzzer" id="buzzer" type="button" aria-label="早押しボタン（スペースキーでも押せます）" disabled>
+    <span class="buzzer-cap"></span>
+    <span class="buzzer-label" id="buzzer-label">待機中</span>
+    <span class="buzzer-sub" id="buzzer-sub">PCはスペースキーでも押せます</span>
+  </button>
+  <details class="p-board-wrap" id="p-board-wrap">
+    <summary>スコアボード</summary>
+    <ol class="board compact" id="p-board"></ol>
+  </details>
+  <div class="overlay" id="p-overlay" hidden>
+    <div class="overlay-box">
+      <p id="p-overlay-msg"></p>
+      <a class="btn btn-ghost" href="./">トップへ戻る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIEWER ============ -->
+<section id="scr-viewer" class="screen viewer" hidden>
+  <header class="v-top">
+    <div class="brand">HAYAOSHI <span class="accent">LIVE</span></div>
+    <div class="v-meta"><span id="v-qno"></span><span id="v-rule"></span><span id="v-code"></span></div>
+  </header>
+  <div class="v-stage">
+    <div class="v-q qtext" id="v-qtext"></div>
+    <div class="v-sub"><span class="v-buzz" id="v-buzz"></span><span class="v-answer" id="v-answer"></span><span class="timer" id="v-timer" hidden></span></div>
+  </div>
+  <ol class="v-board" id="v-board"></ol>
+  <div class="v-wait" id="v-wait">接続中…</div>
+</section>
+
+</main>
+
+<!-- QR modal -->
+<dialog id="qr-dialog" class="qr-dialog" aria-labelledby="qr-title">
+  <h2 id="qr-title">スマホで読み取って参加</h2>
+  <div id="qr-big" class="qr-big"></div>
+  <div class="room-code big" id="qr-code">------</div>
+  <p class="muted" id="qr-url"></p>
+  <form method="dialog"><button class="btn btn-primary">閉じる</button></form>
+</dialog>
+
+<footer class="site-footer" id="site-footer">
+  <span>HAYAOSHI LIVE</span> · <a href="../">made by atalabo</a>
+</footer>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
+<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
