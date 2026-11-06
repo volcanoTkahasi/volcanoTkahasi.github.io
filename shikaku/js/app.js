@@ -193,7 +193,7 @@
     }).join("");
     app.innerHTML = '<div class="view">' +
       '<section class="hero"><h1>スキマ時間で、<br><span class="accent">工業系資格</span>をドリル。</h1>' +
-      '<p>第二種電気工事士・危険物乙4・2級電気通信工事施工管理（第一次）のオリジナル4択問題を、分野別・ランダム・本番形式の模試で。間違えた問題は自動で復習に回ります。</p>' +
+      '<p>第二種電気工事士・危険物乙4・2級電気通信工事施工管理（第一次検定）のオリジナル4択問題を、分野別・ランダム・本番形式の模試で。間違えた問題は自動で復習に回ります。</p>' +
       '<div class="badges"><span class="badge free">完全無料</span><span class="badge">登録不要</span><span class="badge">オフライン対応</span><span class="badge unofficial">非公式</span></div></section>' +
       (answered ? '<div class="tiles" style="margin-top:14px">' +
         '<div class="tile"><div class="k">連続学習</div><div class="v">' + st + "<small>日</small></div></div>" +
