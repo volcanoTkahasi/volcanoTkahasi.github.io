@@ -1,5 +1,5 @@
 /* 資格ドリル Service Worker — 問題を更新したら CACHE の版を上げる */
-var CACHE = "shikaku-drill-v1.0.0";
+var CACHE = "shikaku-drill-v1.0.1";
 var ASSETS = [
   "./",
   "index.html",
